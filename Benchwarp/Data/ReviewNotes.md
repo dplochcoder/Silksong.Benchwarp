@@ -2,12 +2,6 @@
 
 ## Unresolved Notes
 
-### Hunter's March
-  - Ant_08 should be Halfway Home / Greymoor 
-  - Ant_Queen should be Far Fields
-  - Ant_19 titled area should be Chapel of the Beast
-  - Note - Ant_20[door1] is fine, even if the chapel has been closed
-
 ### Bone_Bottom
     - Bonegrave__door1: Still needs permanent obstacle handling. Need to handle door staying open when entering from any transition.
     - Bonegrave__left1: Still needs permanent obstacle handling.
@@ -474,6 +468,12 @@ The below areas have been checked when using the new door warp coroutine.
   - Hang_08[right2] does not exist, and warping there puts you at a different transition. Its partner, Cog_11_Destroyed[left1], softlocks the game when you try to warp there.
   - Hang_16[door1] needs special handling in act 3 mode
   - Hang_01 and Hang_07 are in the Choral Chambers titled/map area
+
+### Hunter's March
+  - Ant_08 should be Halfway Home / Greymoor 
+  - Ant_Queen should be Far Fields
+  - Ant_19 titled area should be Chapel of the Beast
+  - Note - Ant_20[door1] is fine, even if the chapel has been closed. However keeping the door open after getting Beast crest should be handled
 
 ### Doors with dynamic targets
     - Shadow_04__left1: collider obstacle.

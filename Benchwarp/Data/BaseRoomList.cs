@@ -271,8 +271,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Ant_08,
         MapZone = MapZone.HUNTERS_NEST,
-        MapArea = MapAreaNames.Hunter_s_March,
-        TitledArea = TitledAreaNames.Hunter_s_March,
+        MapArea = MapAreaNames.Greymoor,
+        TitledArea = TitledAreaNames.Halfway_Home,
         Gates = new([
             Ant_08__top1,
         ]),
@@ -319,7 +319,7 @@ public static class BaseRoomList
         Name = SceneNames.Ant_19,
         MapZone = MapZone.HUNTERS_NEST,
         MapArea = MapAreaNames.Hunter_s_March,
-        TitledArea = TitledAreaNames.Hunter_s_March,
+        TitledArea = TitledAreaNames.Chapel_of_the_Beast,
         Gates = new([
             Ant_19__door_memoryEnd,
             Ant_19__left1,
@@ -360,8 +360,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Ant_Queen,
         MapZone = MapZone.WILDS,
-        MapArea = MapAreaNames.Hunter_s_March,
-        TitledArea = TitledAreaNames.Hunter_s_March,
+        MapArea = MapAreaNames.Far_Fields,
+        TitledArea = TitledAreaNames.Far_Fields,
         Gates = new([
             Ant_Queen__door_wakeOnGround,
             Ant_Queen__left1,

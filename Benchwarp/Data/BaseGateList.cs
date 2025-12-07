@@ -101,7 +101,14 @@ public static class BaseGateList
     public static DoorData Ant_17__right1 { get; } = new(new(Ant_17, right1), new(Ant_14, left2));
     public static DoorData Ant_19__door_memoryEnd { get; } = new(new(Ant_19, door_memoryEnd));
     public static DoorData Ant_19__left1 { get; } = new(new(Ant_19, left1), new(Ant_20, door1));
-    public static DoorData Ant_20__door1 { get; } = new(new(Ant_20, door1), new(Ant_19, left1));
+    public static DoorData Ant_20__door1 { get; } = new(new(Ant_20, door1), new(Ant_19, left1))
+    {
+        Obstacles = new([
+            new BehaviourObstacleInfo<PlayMakerFSM>("Chapel Door Control", false, ObstacleType.ClosedAfterProgression, ObstacleSeverity.ModifiesSaveData | ObstacleSeverity.LimitsExitAccess),
+            new TransitionObstacleInfo("Chapel Door Control/door1", true, ObstacleType.ClosedAfterProgression, ObstacleSeverity.LimitsExitAccess),
+            new GameObjectActiveObstacleInfo("Chapel Door Control/Door Open", true, ObstacleType.Other, ObstacleSeverity.AbnormalVisual),
+        ])
+    };
     public static DoorData Ant_20__left1 { get; } = new(new(Ant_20, left1), new(Ant_14, right3));
     public static DoorData Ant_21__right1 { get; } = new(new(Ant_21, right1), new(Ant_14, left5));
     public static DoorData Ant_Merchant__right1 { get; } = new(new(Ant_Merchant, right1), new(Ant_14, left1));
