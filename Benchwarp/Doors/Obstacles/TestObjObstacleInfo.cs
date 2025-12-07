@@ -1,4 +1,3 @@
-using Benchwarp.Util;
 using UnityEngine.SceneManagement;
 
 namespace Benchwarp.Doors.Obstacles;
@@ -6,7 +5,8 @@ namespace Benchwarp.Doors.Obstacles;
 /// <summary>
 /// An <see cref="ObstacleInfo"/> of which toggling a TestGameObjectActivator's GameObjects affects the obstacle.
 /// </summary>
-public record TestObjObstacleInfo(string ObjPath, bool Activate, ObstacleType Type, ObstacleSeverity Severity) : BehaviourObstacleInfo<TestGameObjectActivator>(ObjPath, Activate, Type, Severity)
+public record TestObjObstacleInfo(string ObjPath, bool Activate, ObstacleType Type, ObstacleSeverity Severity, ObstacleSaveInfo? SaveInfo = null)
+    : BehaviourObstacleInfo<TestGameObjectActivator>(ObjPath, Activate, Type, Severity, SaveInfo)
 {
     public override void Open(Scene scene)
     {

@@ -5,7 +5,8 @@ namespace Benchwarp.Doors.Obstacles;
 /// <summary>
 /// An <see cref="ObstacleInfo"/> of which activating/deactivating a GameObject affects the obstacle.
 /// </summary>
-public record GameObjectActiveObstacleInfo(string ObjPath, bool Active, ObstacleType Type, ObstacleSeverity Severity) : ObstacleInfo(ObjPath, Type, Severity)
+public record GameObjectActiveObstacleInfo(string ObjPath, bool Active, ObstacleType Type, ObstacleSeverity Severity, ObstacleSaveInfo? SaveInfo = null)
+    : ObstacleInfo(ObjPath, Type, Severity, SaveInfo)
 {
     public override void Open(Scene scene)
     {

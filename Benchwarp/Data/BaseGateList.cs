@@ -144,7 +144,7 @@ public static class BaseGateList
     public static DoorData Arborium_01__right1 { get; } = new(new(Arborium_01, right1), new(Arborium_08, left1))
     {
         Obstacles = new([
-            new ObstacleInfo("one_way_inner_craw", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("arborium_08_oneWay"))
+            new ObstacleInfo("one_way_inner_craw", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.arborium_08_oneWay)))
         ])
     };
     public static DoorData Arborium_01__right2 { get; } = new(new(Arborium_01, right2), new(Arborium_07, left1));
@@ -505,7 +505,7 @@ public static class BaseGateList
     {
         Obstacles = new([
             new ObstacleInfo("Moss Vine Cluster", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
-            new ObstacleInfo("church_gate/bone_gate_02004", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("bonegraveOpen"))
+            new ObstacleInfo("church_gate/bone_gate_02004", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.bonegraveOpen)))
         ])
     };
     public static DoorData Bonegrave__top1 { get; } = new(new(Bonegrave, top1), new(Crawl_07, bot1));
@@ -513,82 +513,82 @@ public static class BaseGateList
     public static DoorData Bonetown__bot1 { get; } = new(new(Bonetown, bot1), new(Tut_03, top1))
     {
         Obstacles = new([
-            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("churchKeeperIntro")),
+            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.churchKeeperIntro))),
             new GameObjectActiveObstacleInfo("Weakness Scene", false, ObstacleType.Cutscene, ObstacleSeverity.AbnormalVisual)
         ])
     };
     public static DoorData Bonetown__bot2 { get; } = new(new(Bonetown, bot2), new(Tut_01, top1))
     {
         Obstacles = new([
-            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("churchKeeperIntro"))
+            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.churchKeeperIntro)))
         ])
     };
     public static DoorData Bonetown__door1 { get; } = new(new(Bonetown, door1), new(Bellway_01, left1))
     {
         Obstacles = new([
-            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("churchKeeperIntro")),
+            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.churchKeeperIntro))),
             new ObstacleInfo("Black Thread States/Black Thread World/Breakable Wall", ObstacleType.ClosedAfterProgression, ObstacleSeverity.AbnormalVisual, new PersistentBoolSaveInfo(Bellway_01, "Act3_Bellway_01_Breakable_wall"))
         ])
     };
     public static DoorData Bonetown__left1 { get; } = new(new(Bonetown, left1), new(Bonegrave, right1))
     {
         Obstacles = new([
-            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("churchKeeperIntro"))
+            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.churchKeeperIntro)))
         ])
     };
     public static DoorData Bonetown__left2 { get; } = new(new(Bonetown, left2), new(Bonegrave, right2))
     {
         Obstacles = new([
-            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("churchKeeperIntro")),
-            new ObstacleInfo("bone_gate_02004", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("bonegraveOpen"))
+            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.churchKeeperIntro))),
+            new ObstacleInfo("bone_gate_02004", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.bonegraveOpen)))
         ])
     };
     public static DoorData Bonetown__right1 { get; } = new(new(Bonetown, right1), new(Bone_01b, left2))
     {
         Obstacles = new([
-            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("churchKeeperIntro"))
+            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.churchKeeperIntro)))
         ])
     };
     public static DoorData Bonetown__right2 { get; } = new(new(Bonetown, right2), new(Bone_01, left2))
     {
         Obstacles = new([
-            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("churchKeeperIntro"))
+            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.churchKeeperIntro)))
         ])
     };
     public static DoorData Bonetown__top1 { get; } = new(new(Bonetown, top1), new(Aspid_01, bot1), null)
     {
         Obstacles = new([
-            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("churchKeeperIntro"))
+            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.churchKeeperIntro)))
         ])
     };
     public static DoorData Bonetown__top2 { get; } = new(new(Bonetown, top2), new(Aspid_01, bot2))
     {
         Obstacles = new([
-            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("churchKeeperIntro"))
+            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.churchKeeperIntro)))
         ])
     };
     public static DoorData Bonetown__top3 { get; } = new(new(Bonetown, top3), new(Aspid_01, bot3), null)
     {
         Obstacles = new([
-            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("churchKeeperIntro"))
+            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.churchKeeperIntro)))
         ])
     };
     public static DoorData Bonetown__top4 { get; } = new(new(Bonetown, top4), new(Aspid_01, bot4), null)
     {
         Obstacles = new([
-            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("churchKeeperIntro"))
+            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.churchKeeperIntro)))
         ])
     };
     public static DoorData Bonetown__top5 { get; } = new(new(Bonetown, top5), new(Aspid_01, bot5), null)
     {
         Obstacles = new([
-            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("churchKeeperIntro"))
+            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.churchKeeperIntro)))
         ])
     };
     public static DoorData Bonetown__top6 { get; } = new(new(Bonetown, top6), new(Aspid_01, bot6), null)
     {
         Obstacles = new([
-            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("churchKeeperIntro"))
+            new ObstacleInfo("Churchkeeper Intro Scene", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.churchKeeperIntro)))
         ])
     };
     public static DoorData Chapel_Wanderer__door_memoryEnd { get; } = new(new(Chapel_Wanderer, door_memoryEnd));
@@ -787,7 +787,7 @@ public static class BaseGateList
     public static DoorData Crawl_02__left1 { get; } = new(new(Crawl_02, left1), new(Crawl_03, right1))
     {
         Obstacles = new([
-            new ObstacleInfo("One Way Wall", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("crawl03_oneWayWall"))
+            new ObstacleInfo("One Way Wall", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.crawl03_oneWayWall)))
         ])
     };
     public static DoorData Crawl_02__left2 { get; } = new(new(Crawl_02, left2), new(Crawl_03b, right1))
@@ -1060,13 +1060,29 @@ public static class BaseGateList
     public static DoorData Hang_03__left1 { get; } = new(new(Hang_03, left1), new(Hang_02, right1));
     public static DoorData Hang_03__left2 { get; } = new(new(Hang_03, left2), new(Hang_15, right1));
     public static DoorData Hang_03__right1 { get; } = new(new(Hang_03, right1), new(Hang_13, left1));
-    public static DoorData Hang_03__right2 { get; } = new(new(Hang_03, right2), new(Hang_10, left1));
+    public static DoorData Hang_03__right2 { get; } = new(new(Hang_03, right2), new(Hang_10, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("sauna_grate", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.hang_10_oneWay)))
+        ])
+    };
     public static DoorData Hang_03__top1 { get; } = new(new(Hang_03, top1), new(Hang_03_top, bot1));
     public static DoorData Hang_03_top__bot1 { get; } = new(new(Hang_03_top, bot1), new(Hang_03, top1));
     public static DoorData Hang_04__left1 { get; } = new(new(Hang_04, left1), new(Hang_12, right1));
     public static DoorData Hang_04__right1 { get; } = new(new(Hang_04, right1), new(Hang_06, left1));
-    public static DoorData Hang_06__bot1 { get; } = new(new(Hang_06, bot1), new(Hang_07, top1));
-    public static DoorData Hang_06__door1 { get; } = new(new(Hang_06, door1), new(Hang_06_bank, left1));
+    public static DoorData Hang_06__bot1 { get; } = new(new(Hang_06, bot1), new(Hang_07, top1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Bot Blocker", ObstacleType.OneWayMechanismEntry, ObstacleSeverity.AbnormalVisual, new PersistentBoolSaveInfo()),
+        ])
+    };
+    public static DoorData Hang_06__door1 { get; } = new(new(Hang_06, door1), new(Hang_06_bank, left1))
+    {
+        Obstacles = new([
+            new BehaviourObstacleInfo<BoxCollider2D>("door1", true, ObstacleType.OpenAfterProgression, ObstacleSeverity.LimitsExitAccess),
+            new ObstacleInfo("bank_door", ObstacleType.Other, ObstacleSeverity.AbnormalVisual),
+        ])
+    };
     public static DoorData Hang_06__left1 { get; } = new(new(Hang_06, left1), new(Hang_04, right1));
     public static DoorData Hang_06__right1 { get; } = new(new(Hang_06, right1), new(Hang_06b, left1));
     public static DoorData Hang_06__top1 { get; } = new(new(Hang_06, top1), new(Hang_08, bot1));
@@ -1074,25 +1090,59 @@ public static class BaseGateList
     public static DoorData Hang_06b__door_tubeEnter { get; } = new(new(Hang_06b, door_tubeEnter));
     public static DoorData Hang_06b__left1 { get; } = new(new(Hang_06b, left1), new(Hang_06, right1));
     public static DoorData Hang_07__bot1 { get; } = new(new(Hang_07, bot1), new(Song_09, top1));
-    public static DoorData Hang_07__left1 { get; } = new(new(Hang_07, left1), new(Song_11, right2));
+    public static DoorData Hang_07__left1 { get; } = new(new(Hang_07, left1), new(Song_11, right2))
+    {
+        Obstacles = new([
+            new BehaviourObstacleInfo<PlayerDataTestResponse>("shortcut_states", false, ObstacleType.OneWayMechanismExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.song_11_oneway))),
+            new GameObjectActiveObstacleInfo("shortcut_states/closed", false, ObstacleType.OneWayMechanismExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility),
+            new GameObjectActiveObstacleInfo("shortcut_states/open", true, ObstacleType.Other, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
     public static DoorData Hang_07__right1 { get; } = new(new(Hang_07, right1), new(Cog_Dancers, left1));
-    public static DoorData Hang_07__top1 { get; } = new(new(Hang_07, top1), new(Hang_06, bot1));
+    public static DoorData Hang_07__top1 { get; } = new(new(Hang_07, top1), new(Hang_06, bot1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Song Knight Quest Parent/Blocker", ObstacleType.OneWayMechanismExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo(SceneName: Hang_06, ID: "Bot Blocker"))
+        ])
+    };
     public static DoorData Hang_08__bot1 { get; } = new(new(Hang_08, bot1), new(Hang_06, top1));
     public static DoorData Hang_08__left1 { get; } = new(new(Hang_08, left1), new(Hang_13, right1));
     public static DoorData Hang_08__left2 { get; } = new(new(Hang_08, left2), new(Hang_09, right1));
-    public static DoorData Hang_08__left3 { get; } = new(new(Hang_08, left3), new(Hang_10, right1));
+    public static DoorData Hang_08__left3 { get; } = new(new(Hang_08, left3), new(Hang_10, right1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess, new PersistentBoolSaveInfo())
+        ])
+    };
     public static DoorData Hang_08__left4 { get; } = new(new(Hang_08, left4), new(Hang_16, right1));
-    public static DoorData Hang_08__right1 { get; } = new(new(Hang_08, right1), new(Hang_17b, left1));
-    public static DoorData Hang_08__right2 { get; } = new(new(Hang_08, right2), new(Cog_11_Destroyed, left1), null);
+    public static DoorData Hang_08__right1 { get; } = new(new(Hang_08, right1), new(Hang_17b, left1))
+    {
+        Obstacles = new([
+            new TestObjObstacleInfo("Song_Knight_Wall", true, ObstacleType.OpenAfterProgression, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility)
+        ])
+    };
+    // public static DoorData Hang_08__right2 { get; } = new(new(Hang_08, right2), new(Cog_11_Destroyed, left1), null);
     public static DoorData Hang_09__right1 { get; } = new(new(Hang_09, right1), new(Hang_08, left2));
-    public static DoorData Hang_10__left1 { get; } = new(new(Hang_10, left1), new(Hang_03, right2));
+    public static DoorData Hang_10__left1 { get; } = new(new(Hang_10, left1), new(Hang_03, right2))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall (1)", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess, new PersistentBoolSaveInfo()),
+            new UnmaskerInfo("Masks")
+        ])
+    };
     public static DoorData Hang_10__right1 { get; } = new(new(Hang_10, right1), new(Hang_08, left3));
     public static DoorData Hang_12__right1 { get; } = new(new(Hang_12, right1), new(Hang_04, left1));
     public static DoorData Hang_13__left1 { get; } = new(new(Hang_13, left1), new(Hang_03, right1));
     public static DoorData Hang_13__right1 { get; } = new(new(Hang_13, right1), new(Hang_08, left1));
     public static DoorData Hang_14__left1 { get; } = new(new(Hang_14, left1), new(Hang_16, door1));
     public static DoorData Hang_15__right1 { get; } = new(new(Hang_15, right1), new(Hang_03, left2));
-    public static DoorData Hang_16__door1 { get; } = new(new(Hang_16, door1), new(Hang_14, left1));
+    public static DoorData Hang_16__door1 { get; } = new(new(Hang_16, door1), new(Hang_14, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Black Thread States Thread Only Variant/Black Thread World/Roof Collider_Basic", ObstacleType.ClosedAfterProgression, ObstacleSeverity.LimitsRoomAccess),
+            new ObstacleInfo("Black Thread States Thread Only Variant/Black Thread World/city_collapse_chunk_generic", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility)
+        ])
+    };
     public static DoorData Hang_16__right1 { get; } = new(new(Hang_16, right1), new(Hang_08, left4));
     public static DoorData Hang_17b__left1 { get; } = new(new(Hang_17b, left1), new(Hang_08, right1));
     public static DoorData Last_Dive__door_cutscenePosition { get; } = new(new(Last_Dive, door_cutscenePosition));
@@ -1668,7 +1718,7 @@ public static class BaseGateList
     public static DoorData Under_01__left3 { get; } = new(new(Under_01, left3), new(Under_27, right2))
     {
         Obstacles = new([
-            new ObstacleInfo("Vine Wall Shortcut", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo("sethShortcut")),
+            new ObstacleInfo("Vine Wall Shortcut", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.sethShortcut))),
         ]),
     };
     public static DoorData Under_01__right1 { get; } = new(new(Under_01, right1), new(Under_01b, left1));
@@ -1766,9 +1816,9 @@ public static class BaseGateList
     public static DoorData Under_17__door1 { get; } = new(new(Under_17, door1), new(Under_20, left1))
     {
         Obstacles = new([
-            new GameObjectActiveObstacleInfo("Architect Shrine Door/door", false, ObstacleType.OpenAfterProgression, ObstacleSeverity.LimitsExitAccess),
             new BehaviourObstacleInfo<ItemReceptacle>("Architect Shrine Door", false, ObstacleType.OpenAfterProgression, ObstacleSeverity.LimitsExitAccess),
-            new BehaviourObstacleInfo<BoxCollider2D>("Architect Shrine Door/door1", true, ObstacleType.Other, ObstacleSeverity.AbnormalVisual),
+            new BehaviourObstacleInfo<BoxCollider2D>("Architect Shrine Door/door1", true, ObstacleType.OpenAfterProgression, ObstacleSeverity.LimitsExitAccess),
+            new GameObjectActiveObstacleInfo("Architect Shrine Door/door", false, ObstacleType.Other, ObstacleSeverity.AbnormalVisual),
         ])
     };
     public static DoorData Under_17__left1 { get; } = new(new(Under_17, left1), new(Under_13, right1));

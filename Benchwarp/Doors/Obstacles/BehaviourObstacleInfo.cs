@@ -6,7 +6,8 @@ namespace Benchwarp.Doors.Obstacles;
 /// <summary>
 /// An <see cref="ObstacleInfo"/> of which enabling/disabling a Behaviour affects the obstacle.
 /// </summary>
-public record BehaviourObstacleInfo<T>(string ObjPath, bool Enable, ObstacleType Type, ObstacleSeverity Severity) : ObstacleInfo(ObjPath, Type, Severity) where T : Behaviour
+public record BehaviourObstacleInfo<T>(string ObjPath, bool Enable, ObstacleType Type, ObstacleSeverity Severity, ObstacleSaveInfo? SaveInfo = null)
+    : ObstacleInfo(ObjPath, Type, Severity, SaveInfo) where T : Behaviour
 {
     public Behaviour? FindBehaviour(Scene scene) => FindObj(scene)?.GetComponent<T>();
 

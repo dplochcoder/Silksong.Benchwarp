@@ -3699,8 +3699,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Hang_01,
         MapZone = MapZone.HANG,
-        MapArea = MapAreaNames.High_Halls,
-        TitledArea = TitledAreaNames.High_Halls,
+        MapArea = MapAreaNames.Choral_Chambers,
+        TitledArea = TitledAreaNames.Choral_Chambers,
         Gates = new([
             Hang_01__right1,
             Hang_01__right2,
@@ -3791,8 +3791,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Hang_07,
         MapZone = MapZone.CITY_OF_SONG,
-        MapArea = MapAreaNames.High_Halls,
-        TitledArea = TitledAreaNames.High_Halls,
+        MapArea = MapAreaNames.Choral_Chambers,
+        TitledArea = TitledAreaNames.Choral_Chambers,
         Gates = new([
             Hang_07__bot1,
             Hang_07__left1,
@@ -3813,7 +3813,7 @@ public static class BaseRoomList
             Hang_08__left3,
             Hang_08__left4,
             Hang_08__right1,
-            Hang_08__right2,
+            // Hang_08__right2,
         ]),
     };
     public static RoomData Hang_09 { get; } = new RoomData
