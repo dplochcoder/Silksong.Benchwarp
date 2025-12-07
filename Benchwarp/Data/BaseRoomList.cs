@@ -4492,7 +4492,7 @@ public static class BaseRoomList
         TitledArea = TitledAreaNames.Mount_Fay,
         Gates = new([
             Peak_07__bot1,
-            Peak_07__bot2,
+            // Peak_07__bot2,
             Peak_07__bot3,
             Peak_07__bot4,
             Peak_07__bot5,

@@ -17,18 +17,6 @@
 
 The below areas have been checked when using the old door warp coroutine - many issues with softlocks/camera are likely already fixed with the new coroutine.
 
-### Mount_Fay
-    - Bellway_Peak__right2: collider obstacle.
-    - Peak_01__left1: abnormal camera.
-    - Peak_01__top2/top3/top4: big top transition at several different positions.
-    - Peak_04c__right2: collider obstacle.
-    - Peak_05__right3: abnormal camera.
-    - Peak_07__bot2: hornet glitches through terrain and softlocks the game.
-    - Peak_07__bot3/bot4: big bot transition at two different positions.
-    - Peak_07__bot5: hornet glitches through terrain.
-    - Peak_08b__bot4: big bot transition.
-    - Peak_08b__bot5: big bot transition, but hornet isn't visible.
-
 ### Putrified_Ducts
     - Aqueduct_01__left1: collider obstacle.
     - Aqueduct_02__left2: collider obstacle.
@@ -474,6 +462,18 @@ The below areas have been checked when using the new door warp coroutine.
   - Ant_Queen should be Far Fields
   - Ant_19 titled area should be Chapel of the Beast
   - Note - Ant_20[door1] is fine, even if the chapel has been closed. However keeping the door open after getting Beast crest should be handled
+
+### Mount_Fay
+    - Bellway_Peak__right2: collider obstacle.
+    - Peak_01__left1: abnormal camera.
+    - Peak_01__top2/top3/top4: big top transition at several different positions.
+    - Peak_04c__right2: collider obstacle.
+    - Peak_05__right3: abnormal camera.
+    - Peak_07__bot2: hornet glitches through terrain and softlocks the game.
+    - Peak_07__bot3/bot4: big bot transition at two different positions.
+    - Peak_07__bot5: hornet glitches through terrain.
+    - Peak_08b__bot4: big bot transition.
+    - Peak_08b__bot5: big bot transition, but hornet isn't visible.
 
 ### Doors with dynamic targets
     - Shadow_04__left1: collider obstacle.

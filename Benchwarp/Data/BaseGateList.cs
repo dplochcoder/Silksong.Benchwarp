@@ -310,7 +310,13 @@ public static class BaseGateList
     public static DoorData Bellway_Peak__left1 { get; } = new(new(Bellway_Peak, left1), new(Peak_04c, right1));
     public static DoorData Bellway_Peak__left2 { get; } = new(new(Bellway_Peak, left2), new(Peak_04c, right2));
     public static DoorData Bellway_Peak__right1 { get; } = new(new(Bellway_Peak, right1), new(Peak_04, left1));
-    public static DoorData Bellway_Peak__right2 { get; } = new(new(Bellway_Peak, right2), new(Bellway_Peak_02, left1));
+    public static DoorData Bellway_Peak__right2 { get; } = new(new(Bellway_Peak, right2), new(Bellway_Peak_02, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+            new UnmaskerInfo("Masks")
+        ])
+    };
     public static DoorData Bellway_Peak__top1 { get; } = new(new(Bellway_Peak, top1), new(Peak_05, bot1));
     public static DoorData Bellway_Peak_02__left1 { get; } = new(new(Bellway_Peak_02, left1), new(Bellway_Peak, right2));
     public static DoorData Bellway_Shadow__door_fastTravelExit { get; } = new(new(Bellway_Shadow, door_fastTravelExit));
@@ -1271,7 +1277,12 @@ public static class BaseGateList
     public static DoorData Peak_04__left1 { get; } = new(new(Peak_04, left1), new(Bellway_Peak, right1));
     public static DoorData Peak_04__right1 { get; } = new(new(Peak_04, right1), new(Peak_04d, left1));
     public static DoorData Peak_04c__right1 { get; } = new(new(Peak_04c, right1), new(Bellway_Peak, left1));
-    public static DoorData Peak_04c__right2 { get; } = new(new(Peak_04c, right2), new(Bellway_Peak, left2));
+    public static DoorData Peak_04c__right2 { get; } = new(new(Peak_04c, right2), new(Bellway_Peak, left2))
+    {
+        Obstacles = new([
+            new ObstacleInfo("One Way Wall Crystal", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+        ])
+    };
     public static DoorData Peak_04d__left1 { get; } = new(new(Peak_04d, left1), new(Peak_04, right1));
     public static DoorData Peak_04d__right1 { get; } = new(new(Peak_04d, right1), new(Peak_02, left1));
     public static DoorData Peak_05__bot1 { get; } = new(new(Peak_05, bot1), new(Bellway_Peak, top1));
@@ -1288,7 +1299,7 @@ public static class BaseGateList
     public static DoorData Peak_06b__door1 { get; } = new(new(Peak_06b, door1), new(Peak_06, left1));
     public static DoorData Peak_06b__left1 { get; } = new(new(Peak_06b, left1), new(Peak_05e, right2));
     public static DoorData Peak_07__bot1 { get; } = new(new(Peak_07, bot1), new(Peak_01, top1));
-    public static DoorData Peak_07__bot2 { get; } = new(new(Peak_07, bot2), new(Peak_01, top2));
+    // public static DoorData Peak_07__bot2 { get; } = new(new(Peak_07, bot2), new(Peak_01, top2));
     public static DoorData Peak_07__bot3 { get; } = new(new(Peak_07, bot3), new(Peak_01, top3), new(Peak_01, top4));
     public static DoorData Peak_07__bot4 { get; } = new(new(Peak_07, bot4), new(Peak_01, top3), null);
     public static DoorData Peak_07__bot5 { get; } = new(new(Peak_07, bot5), new(Peak_01, top3), null);
