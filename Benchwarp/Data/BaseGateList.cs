@@ -114,14 +114,34 @@ public static class BaseGateList
     public static DoorData Ant_Merchant__right1 { get; } = new(new(Ant_Merchant, right1), new(Ant_14, left1));
     public static DoorData Ant_Queen__door_wakeOnGround { get; } = new(new(Ant_Queen, door_wakeOnGround));
     public static DoorData Ant_Queen__left1 { get; } = new(new(Ant_Queen, left1), new(Bone_East_25, door1));
-    public static DoorData Aqueduct_01__left1 { get; } = new(new(Aqueduct_01, left1), new(Arborium_11, right1));
+    public static DoorData Aqueduct_01__left1 { get; } = new(new(Aqueduct_01, left1), new(Arborium_11, right1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall Aqueduct Start", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+            new ObstacleInfo("Camera Locks", ObstacleType.Other, ObstacleSeverity.LimitsVisibility),
+            new UnmaskerInfo("Masks")
+        ])
+    };
     public static DoorData Aqueduct_01__right1 { get; } = new(new(Aqueduct_01, right1), new(Aqueduct_02, left1));
     public static DoorData Aqueduct_02__left1 { get; } = new(new(Aqueduct_02, left1), new(Aqueduct_01, right1));
-    public static DoorData Aqueduct_02__left2 { get; } = new(new(Aqueduct_02, left2), new(Aqueduct_04, right1));
+    public static DoorData Aqueduct_02__left2 { get; } = new(new(Aqueduct_02, left2), new(Aqueduct_04, right1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+        ])
+    };
     public static DoorData Aqueduct_02__left3 { get; } = new(new(Aqueduct_02, left3), new(Aqueduct_07, right1));
     public static DoorData Aqueduct_02__right1 { get; } = new(new(Aqueduct_02, right1), new(Aqueduct_03, left1));
     public static DoorData Aqueduct_02__right2 { get; } = new(new(Aqueduct_02, right2), new(Bellway_Aqueduct, left1));
-    public static DoorData Aqueduct_02__right3 { get; } = new(new(Aqueduct_02, right3), new(Aqueduct_08, left1));
+    public static DoorData Aqueduct_02__right3 { get; } = new(new(Aqueduct_02, right3), new(Aqueduct_08, left1))
+    {
+        Obstacles = new([
+            // Disabling PersistentBoolItemResponder doesn't work because it subscribes to PersistentBoolItem's hook
+            new BehaviourObstacleInfo<PersistentBoolItem>("right_break_gate", false, ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo(SceneName: Aqueduct_08, ID: "Breakable Wall_Silhouette")),
+            new GameObjectActiveObstacleInfo("right_break_gate/Closed", false, ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility),
+            new GameObjectActiveObstacleInfo("right_break_gate/Open", true, ObstacleType.Other, ObstacleSeverity.AbnormalVisual),
+        ])
+    };
     public static DoorData Aqueduct_03__left1 { get; } = new(new(Aqueduct_03, left1), new(Aqueduct_02, right1));
     public static DoorData Aqueduct_03__right1 { get; } = new(new(Aqueduct_03, right1), new(Aqueduct_05, left1));
     public static DoorData Aqueduct_03__top1 { get; } = new(new(Aqueduct_03, top1), new(Aqueduct_06, bot1));
@@ -135,7 +155,12 @@ public static class BaseGateList
     public static DoorData Aqueduct_06__left1 { get; } = new(new(Aqueduct_06, left1), new(Bellway_Aqueduct, right1));
     public static DoorData Aqueduct_06__left2 { get; } = new(new(Aqueduct_06, left2), new(Aqueduct_08, right1));
     public static DoorData Aqueduct_07__right1 { get; } = new(new(Aqueduct_07, right1), new(Aqueduct_02, left3));
-    public static DoorData Aqueduct_08__left1 { get; } = new(new(Aqueduct_08, left1), new(Aqueduct_02, right3));
+    public static DoorData Aqueduct_08__left1 { get; } = new(new(Aqueduct_08, left1), new(Aqueduct_02, right3))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall_Silhouette", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility)
+        ])
+    };
     public static DoorData Aqueduct_08__right1 { get; } = new(new(Aqueduct_08, right1), new(Aqueduct_06, left2));
     public static DoorData Arborium_01__bot1 { get; } = new(new(Arborium_01, bot1), new(Song_25, top1));
     public static DoorData Arborium_01__left1 { get; } = new(new(Arborium_01, left1), new(Arborium_09, right1));

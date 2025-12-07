@@ -13,18 +13,12 @@
 ### Lost_Verdania
     - Clover_04b__door1: Still needs permanent obstacle handling.
 
+### Putrified_Ducts
+    - Aqueduct_05__door2: Both NoSave and permanent handling needs to be done. Complicated because of the additive scenes.
+
 (I got lazy with documenting permanent obstacle handling - basically anything that doesn't have an ObstacleSaveInfo needs to be reverified).
 
 The below areas have been checked when using the old door warp coroutine - many issues with softlocks/camera are likely already fixed with the new coroutine.
-
-### Putrified_Ducts
-    - Aqueduct_01__left1: collider obstacle.
-    - Aqueduct_02__left2: collider obstacle.
-    - Aqueduct_02__right3: collider obstacle.
-    - Aqueduct_04__bot1: screen is pitch-black (either collider or camera issue).
-    - Aqueduct_05__door2: arrives at left1 instead if Fleatopia isn't there.
-    - Aqueduct_08__left1: collider obstacle.
-    - Bellway_Aqueduct: game softlocks if door warping to this scene during Act 3 if bell beast fast travel isn't unlocked.
 
 ### Far_Fields
     - Bellshrine_05: map/titled area should be Deep Docks.
@@ -474,6 +468,14 @@ The below areas have been checked when using the new door warp coroutine.
     - Peak_07__bot5: hornet glitches through terrain.
     - Peak_08b__bot4: big bot transition.
     - Peak_08b__bot5: big bot transition, but hornet isn't visible.
+
+### Putrified_Ducts
+    - Aqueduct_01__left1: collider obstacle.
+    - Aqueduct_02__left2: collider obstacle.
+    - Aqueduct_02__right3: collider obstacle.
+    - Aqueduct_04__bot1: screen is pitch-black (either collider or camera issue).
+    - Aqueduct_08__left1: collider obstacle.
+    - Bellway_Aqueduct: game softlocks if door warping to this scene during Act 3 if bell beast fast travel isn't unlocked.
 
 ### Doors with dynamic targets
     - Shadow_04__left1: collider obstacle.
