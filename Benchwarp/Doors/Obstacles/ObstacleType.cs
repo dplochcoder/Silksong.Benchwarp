@@ -23,12 +23,12 @@ public enum ObstacleType
     TwoWayBreakable,
 
     /// <summary>
-    /// A wall that opens by switch/lever mechanism, controlled only from this side.
+    /// A wall that opens by switch/lever/lock mechanism, controlled only from this side.
     /// </summary>
     OneWayMechanismEntry,
 
     /// <summary>
-    /// A wall that opens by switch/lever mechanism, controlled only from the other side.
+    /// A wall that opens by switch/lever/lock mechanism, controlled only from the other side.
     /// </summary>
     OneWayMechanismExit,
 

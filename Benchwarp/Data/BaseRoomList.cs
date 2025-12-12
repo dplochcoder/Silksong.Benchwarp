@@ -2895,8 +2895,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Dock_03b,
         MapZone = MapZone.WILDS,
-        MapArea = MapAreaNames.Deep_Docks,
-        TitledArea = TitledAreaNames.Deep_Docks,
+        MapArea = MapAreaNames.Far_Fields,
+        TitledArea = TitledAreaNames.Far_Fields,
         Gates = new([
             Dock_03b__left1,
             Dock_03b__right1,

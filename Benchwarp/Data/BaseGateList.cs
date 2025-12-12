@@ -318,7 +318,13 @@ public static class BaseGateList
         ]),
     };
     public static DoorData Bellway_02__door_fastTravelExit { get; } = new(new(Bellway_02, door_fastTravelExit));
-    public static DoorData Bellway_02__left1 { get; } = new(new(Bellway_02, left1), new(Dock_16, right1));
+    public static DoorData Bellway_02__left1 { get; } = new(new(Bellway_02, left1), new(Dock_16, right1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess, new PersistentBoolSaveInfo()),
+            new UnmaskerInfo("Masks")
+        ])
+    };
     public static DoorData Bellway_02__right1 { get; } = new(new(Bellway_02, right1), new(Bone_East_01, left2));
     public static DoorData Bellway_03__door_fastTravelExit { get; } = new(new(Bellway_03, door_fastTravelExit));
     public static DoorData Bellway_03__left1 { get; } = new(new(Bellway_03, left1), new(Bone_East_07, right2));
@@ -991,9 +997,19 @@ public static class BaseGateList
     public static DoorData Crawl_09__right1 { get; } = new(new(Crawl_09, right1), new(Crawl_07, left1));
     public static DoorData Crawl_10__right1 { get; } = new(new(Crawl_10, right1), new(Crawl_09, left1));
     public static DoorData Dock_01__left1 { get; } = new(new(Dock_01, left1), new(Dock_08, right1));
-    public static DoorData Dock_01__right1 { get; } = new(new(Dock_01, right1), new(Bone_East_05, left1));
+    public static DoorData Dock_01__right1 { get; } = new(new(Dock_01, right1), new(Bone_East_05, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Song_Gate_small", ObstacleType.OneWayMechanismExit, ObstacleSeverity.LimitsRoomAccess, new PersistentBoolSaveInfo(SceneName: Bone_East_05, ID: "Song_lever_side"))
+        ])
+    };
     public static DoorData Dock_01__right2 { get; } = new(new(Dock_01, right2), new(Bone_East_01, left1));
-    public static DoorData Dock_02__left1 { get; } = new(new(Dock_02, left1), new(Room_Forge, right1));
+    public static DoorData Dock_02__left1 { get; } = new(new(Dock_02, left1), new(Room_Forge, right1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Song Knight Gate Backside", ObstacleType.OneWayMechanismExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.openedSongGateDocks)))
+        ])
+    };
     public static DoorData Dock_02__left2 { get; } = new(new(Dock_02, left2), new(Dock_09, right1));
     public static DoorData Dock_02__right1 { get; } = new(new(Dock_02, right1), new(Dock_02b, left1));
     public static DoorData Dock_02__right2 { get; } = new(new(Dock_02, right2), new(Dock_02b, left2));
@@ -1005,10 +1021,28 @@ public static class BaseGateList
     public static DoorData Dock_02b__right2 { get; } = new(new(Dock_02b, right2), new(Dock_03c, left2));
     public static DoorData Dock_03__bot1 { get; } = new(new(Dock_03, bot1), new(Dock_03c, top2));
     public static DoorData Dock_03__left1 { get; } = new(new(Dock_03, left1), new(Dock_02b, right1));
-    public static DoorData Dock_03__right1 { get; } = new(new(Dock_03, right1), new(Dock_03b, left1));
-    public static DoorData Dock_03b__left1 { get; } = new(new(Dock_03b, left1), new(Dock_03, right1));
+    public static DoorData Dock_03__right1 { get; } = new(new(Dock_03, right1), new(Dock_03b, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall_Silhouette", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess, new PersistentBoolSaveInfo()),
+            new ObstacleInfo("Camera Locks", ObstacleType.Other, ObstacleSeverity.AbnormalVisual),
+            new UnmaskerInfo("Masks")
+        ])
+    };
+    public static DoorData Dock_03b__left1 { get; } = new(new(Dock_03b, left1), new(Dock_03, right1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess, new PersistentBoolSaveInfo()),
+            new UnmaskerInfo("Masks")
+        ])
+    };
     public static DoorData Dock_03b__right1 { get; } = new(new(Dock_03b, right1), new(Bone_East_07, left3));
-    public static DoorData Dock_03c__left2 { get; } = new(new(Dock_03c, left2), new(Dock_02b, right2));
+    public static DoorData Dock_03c__left2 { get; } = new(new(Dock_03c, left2), new(Dock_02b, right2))
+    {
+        Obstacles = new([
+            new ObstacleInfo("explode_wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+        ])
+    };
     public static DoorData Dock_03c__top1 { get; } = new(new(Dock_03c, top1), new(Dock_03d, bot1));
     public static DoorData Dock_03c__top2 { get; } = new(new(Dock_03c, top2), new(Dock_03, bot1));
     public static DoorData Dock_03d__bot1 { get; } = new(new(Dock_03d, bot1), new(Dock_03c, top1));
@@ -1027,13 +1061,31 @@ public static class BaseGateList
     public static DoorData Dock_10__left1 { get; } = new(new(Dock_10, left1), new(Dock_04, right3));
     public static DoorData Dock_10__right1 { get; } = new(new(Dock_10, right1), new(Dock_15, left1));
     public static DoorData Dock_11__left1 { get; } = new(new(Dock_11, left1), new(Dock_15, right3));
-    public static DoorData Dock_11__right1 { get; } = new(new(Dock_11, right1), new(Dock_12, left1));
-    public static DoorData Dock_12__door1 { get; } = new(new(Dock_12, door1), new(Room_Diving_Bell, left1));
+    public static DoorData Dock_11__right1 { get; } = new(new(Dock_11, right1), new(Dock_12, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Dock Pipe Grate Door (2)", ObstacleType.OneWayMechanismEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo(ID: "Song_lever_side (2)")),
+        ])
+    };
+    public static DoorData Dock_12__door1 { get; } = new(new(Dock_12, door1), new(Room_Diving_Bell, left1))
+    {
+        Obstacles = new([
+            new TestObjObstacleInfo("Diving Bell/States", false, ObstacleType.ClosedAfterProgression, ObstacleSeverity.LimitsExitAccess),
+            new TransitionObstacleInfo("Diving Bell/States/Standard/door1", true, ObstacleType.OneWayMechanismEntry, ObstacleSeverity.LimitsExitAccess),
+            new ObstacleInfo("Diving Bell/States/Standard/Diving Bell Door", ObstacleType.Other, ObstacleSeverity.AbnormalVisual),
+        ])
+    };
     public static DoorData Dock_12__left1 { get; } = new(new(Dock_12, left1), new(Dock_11, right1));
     public static DoorData Dock_13__right1 { get; } = new(new(Dock_13, right1), new(Dock_15, left2));
     public static DoorData Dock_14__left1 { get; } = new(new(Dock_14, left1), new(Dock_15, right2));
     public static DoorData Dock_15__left1 { get; } = new(new(Dock_15, left1), new(Dock_10, right1));
-    public static DoorData Dock_15__left2 { get; } = new(new(Dock_15, left2), new(Dock_13, right1));
+    public static DoorData Dock_15__left2 { get; } = new(new(Dock_15, left2), new(Dock_13, right1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess, new PersistentBoolSaveInfo()),
+            new UnmaskerInfo("Masks")
+        ])
+    };
     public static DoorData Dock_15__right1 { get; } = new(new(Dock_15, right1), new(Dock_09, left1));
     public static DoorData Dock_15__right2 { get; } = new(new(Dock_15, right2), new(Dock_14, left1));
     public static DoorData Dock_15__right3 { get; } = new(new(Dock_15, right3), new(Dock_11, left1));
@@ -1484,7 +1536,13 @@ public static class BaseGateList
     public static DoorData Room_Diving_Bell_Abyss_Fixed__door_cinematicEnd { get; } = new(new(Room_Diving_Bell_Abyss_Fixed, door_cinematicEnd));
     public static DoorData Room_Diving_Bell_Abyss_Fixed__left1 { get; } = new(new(Room_Diving_Bell_Abyss_Fixed, left1), new(Abyss_03, door2));
     public static DoorData Room_Forge__left1 { get; } = new(new(Room_Forge, left1), new(Dock_04, right1));
-    public static DoorData Room_Forge__right1 { get; } = new(new(Room_Forge, right1), new(Dock_02, left1));
+    public static DoorData Room_Forge__right1 { get; } = new(new(Room_Forge, right1), new(Dock_02, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("dock_sealed_gate/gate", ObstacleType.OneWayMechanismEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo("dock_sealed_gate")),
+            new ObstacleInfo("dock_sealed_gate/song_knight_lock", ObstacleType.Other, ObstacleSeverity.AbnormalVisual),
+        ])
+    };
     public static DoorData Room_Forge__top1 { get; } = new(new(Room_Forge, top1), new(Bone_East_12, bot1));
     public static DoorData Room_Huntress__left1 { get; } = new(new(Room_Huntress, left1), new(Aqueduct_04, door1));
     public static DoorData Room_Pinstress__left1 { get; } = new(new(Room_Pinstress, left1), new(Coral_34, door1));

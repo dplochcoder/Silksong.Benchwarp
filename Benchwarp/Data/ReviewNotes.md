@@ -20,28 +20,12 @@
     - Bone_East_11__right1: interaction with the left side transition/the bridge is unhandled in NoSave behaviour.
     - Bone_East_16__right1 / Bone_East_17b__left1: two way breakable wall, but controlled by two separate PersistentBoolItems?
 
+### Deep_Docks
+    - Dock_12__door1: complex handling needed for Permanent behaviour.
+
 (I got lazy with documenting permanent obstacle handling - basically anything that doesn't have an ObstacleSaveInfo needs to be reverified).
 
 The below areas have been checked when using the old door warp coroutine - many issues with softlocks/camera are likely already fixed with the new coroutine.
-
-### Deep_Docks
-    - Bellway_02: game softlocks if door warping to this scene during Act 3 if bell beast fast travel isn't unlocked.
-    - Bellway_02__left1: collider obstacle.
-    - Dock_01__right1: collider obstacle.
-    - Dock_02__left1: collider obstacle.
-    - Dock_03__bot1: visual obstacle (hatch isn't open when hornet enters scene).
-    - Dock_03__right1: collider obstacle.
-    - Dock_03b: map/titled area should be Far Fields.
-    - Dock_03b__left1: collider obstacle.
-    - Dock_03c__left2: collider obstacle.
-    - Dock_03c__top1: collider obstacle.
-    - Dock_03c__top2: collider obstacle.
-    - Dock_03d__bot1: visual obstacle (hatch isn't open when hornet enters scene).
-    - Dock_11__right1: collider obstacle.
-    - Dock_12__door1: arrives at left1 instead if Diving Bell isn't unlocked.
-    - Dock_15__left2: collider obstacle.
-    - Room_Forge__right1: collider obstacle (simple key door).
-    - Room_Forge__top1: collider obstacle.
 
 ### Moss_Grotto
     - Tut_01__left1: collider obstacle.
@@ -480,6 +464,25 @@ The below areas have been checked when using the new door warp coroutine.
     - Bone_East_16__right1: collider obstacle.
     - Bone_East_17b__left1: collider obstacle.
     - Bone_East_18c__left1: collider obstacle.
+
+### Deep_Docks
+    - Bellway_02: game softlocks if door warping to this scene during Act 3 if bell beast fast travel isn't unlocked.
+    - Bellway_02__left1: collider obstacle.
+    - Dock_01__right1: collider obstacle.
+    - Dock_02__left1: collider obstacle.
+    - Dock_03__bot1: visual obstacle (hatch isn't open when hornet enters scene).
+    - Dock_03__right1: collider obstacle.
+    - Dock_03b: map/titled area should be Far Fields.
+    - Dock_03b__left1: collider obstacle.
+    - Dock_03c__left2: collider obstacle.
+    - Dock_03c__top1: collider obstacle.
+    - Dock_03c__top2: collider obstacle.
+    - Dock_03d__bot1: visual obstacle (hatch isn't open when hornet enters scene).
+    - Dock_11__right1: collider obstacle.
+    - Dock_12__door1: arrives at left1 instead if Diving Bell isn't unlocked.
+    - Dock_15__left2: collider obstacle.
+    - Room_Forge__right1: collider obstacle (simple key door).
+    - Room_Forge__top1: collider obstacle.
 
 ### Doors with dynamic targets
     - Shadow_04__left1: collider obstacle.
