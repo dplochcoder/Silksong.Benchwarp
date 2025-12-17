@@ -4211,8 +4211,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Memory_Needolin,
         MapZone = MapZone.MEMORY,
-        MapArea = MapAreaNames.Unknown,
-        TitledArea = TitledAreaNames.Unknown,
+        MapArea = MapAreaNames.Bellhart,
+        TitledArea = TitledAreaNames.Bellhart,
         Gates = new([
             Memory_Needolin__door_wakeOnGround,
             Memory_Needolin__left1,
@@ -4224,8 +4224,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Memory_Red,
         MapZone = MapZone.MEMORY,
-        MapArea = MapAreaNames.Unknown,
-        TitledArea = TitledAreaNames.Unknown,
+        MapArea = MapAreaNames.Mosslands,
+        TitledArea = TitledAreaNames.Ruined_Chapel,
         Gates = new([
             Memory_Red__door_enterRedMemory_Beast,
             Memory_Red__door_enterRedMemory_Hive,
@@ -4567,8 +4567,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Room_Caravan_Interior,
         MapZone = MapZone.NONE,
-        MapArea = MapAreaNames.Unknown,
-        TitledArea = TitledAreaNames.Unknown,
+        MapArea = MapAreaNames.Greymoor,
+        TitledArea = TitledAreaNames.Greymoor,
         Gates = new([
             Room_Caravan_Interior__right1,
         ]),

@@ -851,8 +851,20 @@ public static class BaseGateList
     public static DoorData Coral_03__right2 { get; } = new(new(Coral_03, right2), new(Coral_12, left2));
     public static DoorData Coral_03__right3 { get; } = new(new(Coral_03, right3), new(Coral_12, left3));
     public static DoorData Coral_10__left_firstEntrance { get; } = new(new(Coral_10, left_firstEntrance));
-    public static DoorData Coral_10__left1 { get; } = new(new(Coral_10, left1), new(Coral_Judge_Arena, right1));
-    public static DoorData Coral_10__right1 { get; } = new(new(Coral_10, right1), new(Song_19_entrance, left1));
+    public static DoorData Coral_10__left1 { get; } = new(new(Coral_10, left1), new(Coral_Judge_Arena, right1))
+    {
+        Obstacles = new([
+            // PlayerData.defeatedLastJudge
+            new ObstacleInfo("closed gate", ObstacleType.OpenAfterProgression, ObstacleSeverity.LimitsRoomAccess),
+            new ObstacleInfo("Gate Quest Ender", ObstacleType.Other, ObstacleSeverity.ModifiesSaveData)
+        ])
+    };
+    public static DoorData Coral_10__right1 { get; } = new(new(Coral_10, right1), new(Song_19_entrance, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Song Gate Entrance Right", ObstacleType.OneWayMechanismEntry, ObstacleSeverity.LimitsRoomAccess, new PersistentBoolSaveInfo(ID: "Coral10rightsidegate")),
+        ])
+    };
     public static DoorData Coral_11__left1 { get; } = new(new(Coral_11, left1), new(Coral_11b, right1));
     public static DoorData Coral_11__right1 { get; } = new(new(Coral_11, right1), new(Coral_03, left2));
     public static DoorData Coral_11b__left1 { get; } = new(new(Coral_11b, left1), new(Coral_34, right1));
@@ -1179,7 +1191,12 @@ public static class BaseGateList
     public static DoorData Dust_Maze_08__right2 { get; } = new(new(Dust_Maze_08, right2));
     public static DoorData Dust_Maze_08__right3 { get; } = new(new(Dust_Maze_08, right3));
     public static DoorData Dust_Maze_08__top1 { get; } = new(new(Dust_Maze_08, top1));
-    public static DoorData Dust_Maze_08_completed__right1 { get; } = new(new(Dust_Maze_08_completed, right1), new(Dust_05, left1), null);
+    public static DoorData Dust_Maze_08_completed__right1 { get; } = new(new(Dust_Maze_08_completed, right1), new(Dust_05, left1), null)
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility),
+        ])
+    };
     public static DoorData Dust_Maze_08_completed__right2 { get; } = new(new(Dust_Maze_08_completed, right2), new(Dust_09, left2), null);
     public static DoorData Dust_Maze_09_entrance__left1 { get; } = new(new(Dust_Maze_09_entrance, left1));
     public static DoorData Dust_Maze_09_entrance__right1 { get; } = new(new(Dust_Maze_09_entrance, right1));
@@ -1306,7 +1323,12 @@ public static class BaseGateList
     public static DoorData Greymoor_24__left1 { get; } = new(new(Greymoor_24, left1), new(Greymoor_03, right5));
     public static DoorData Halfway_01__bot1 { get; } = new(new(Halfway_01, bot1), new(Ant_08, top1));
     public static DoorData Halfway_01__left1 { get; } = new(new(Halfway_01, left1), new(Greymoor_03, right4));
-    public static DoorData Halfway_01__right1 { get; } = new(new(Halfway_01, right1), new(Greymoor_03, left3));
+    public static DoorData Halfway_01__right1 { get; } = new(new(Halfway_01, right1), new(Greymoor_03, left3))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Grey Door Container", ObstacleType.OneWayMechanismEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo(ID: "Hornet_pressure_plate_small_persistent"))
+        ])
+    };
     public static DoorData Hang_01__right1 { get; } = new(new(Hang_01, right1), new(Hang_02, left1));
     public static DoorData Hang_01__right2 { get; } = new(new(Hang_01, right2), new(Song_17, left1));
     public static DoorData Hang_02__left1 { get; } = new(new(Hang_02, left1), new(Hang_01, right1));
@@ -1469,9 +1491,24 @@ public static class BaseGateList
     public static DoorData Memory_Needolin__door_wakeOnGround { get; } = new(new(Memory_Needolin, door_wakeOnGround));
     public static DoorData Memory_Needolin__left1 { get; } = new(new(Memory_Needolin, left1), new(Memory_Needolin, right1));
     public static DoorData Memory_Needolin__right1 { get; } = new(new(Memory_Needolin, right1), new(Memory_Needolin, left1));
-    public static DoorData Memory_Red__door_enterRedMemory_Beast { get; } = new(new(Memory_Red, door_enterRedMemory_Beast), new(Memory_Red, door_wakeInRedMemory_Beast), null);
-    public static DoorData Memory_Red__door_enterRedMemory_Hive { get; } = new(new(Memory_Red, door_enterRedMemory_Hive), new(Memory_Red, door_wakeInRedMemory_Hive), null);
-    public static DoorData Memory_Red__door_enterRedMemory_Weaver { get; } = new(new(Memory_Red, door_enterRedMemory_Weaver), new(Memory_Red, door_wakeInRedMemory_Weaver), null);
+    public static DoorData Memory_Red__door_enterRedMemory_Beast { get; } = new(new(Memory_Red, door_enterRedMemory_Beast), new(Memory_Red, door_wakeInRedMemory_Beast), null)
+    {
+        Obstacles = new([
+            new GameObjectActiveObstacleInfo("Scenery Groups/Deepnest Scenery", true, ObstacleType.Other, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
+    public static DoorData Memory_Red__door_enterRedMemory_Hive { get; } = new(new(Memory_Red, door_enterRedMemory_Hive), new(Memory_Red, door_wakeInRedMemory_Hive), null)
+    {
+        Obstacles = new([
+            new GameObjectActiveObstacleInfo("Scenery Groups/Hive Scenery", true, ObstacleType.Other, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
+    public static DoorData Memory_Red__door_enterRedMemory_Weaver { get; } = new(new(Memory_Red, door_enterRedMemory_Weaver), new(Memory_Red, door_wakeInRedMemory_Weaver), null)
+    {
+        Obstacles = new([
+            new GameObjectActiveObstacleInfo("Scenery Groups/Entry Scenery", true, ObstacleType.Other, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
     public static DoorData Memory_Red__door_wakeInMemory { get; } = new(new(Memory_Red, door_wakeInMemory));
     public static DoorData Memory_Red__door_wakeInRedMemory_Beast { get; } = new(new(Memory_Red, door_wakeInRedMemory_Beast), null, new(Memory_Red, door_enterRedMemory_Beast));
     public static DoorData Memory_Red__door_wakeInRedMemory_Hive { get; } = new(new(Memory_Red, door_wakeInRedMemory_Hive), null, new(Memory_Red, door_enterRedMemory_Hive));

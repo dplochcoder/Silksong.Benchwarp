@@ -27,47 +27,15 @@
     - Greymoor_08__door1: Both NoSave and permanent handling needs to be done. Complicated because of the additive scenes.
     - Greymoor_08__door2: Both NoSave and permanent handling needs to be done. Complicated because of the additive scenes.
 
-(I got lazy with documenting permanent obstacle handling - basically anything that doesn't have an ObstacleSaveInfo needs to be reverified).
-
-The below areas have been checked when using the old door warp coroutine - many issues with softlocks/camera are likely already fixed with the new coroutine.
-
 ### Unknown
-    - Memory_Needolin: map/titled area should be Bellhart.
-    - Memory_Needolin__right1: abnormal camera.
-    - Memory_Red: map area should be Mosslands and titled area should be Ruined Chapel.
-    - Memory_Red: multiple door names in the UI look the same.
-    - Memory_Red__door_enterRedMemory_Beast: background graphics missing.
-    - Memory_Red__door_enterRedMemory_Hive: background graphics missing.
-    - Memory_Red__door_enterRedMemory_Hive: background graphics missing.
-    - Memory_Red__door_wakeInRedMemory_Beast: visual glitch with hornet appearing for a split second before cutscene.
-    - Memory_Red__door_wakeInRedMemory_Hive: visual glitch with hornet appearing for a split second before cutscene.
-    - Memory_Red__door_wakeInRedMemory_Weaver: visual glitch with hornet appearing for a split second before cutscene.
-    - Room_Caravan_Interior__right1: map/titled area should be Greymoor.
     - Room_Caravan_Spa__left1: map/titled area and flipped transition would depend on current position of flea caravan.
-
-### Exhaust_Organ
 
 ### Halfway_Home
     - Halfway_01__bot1: If the vintage nectar gauntlet hasn't been completed, the hatch will appear and stay open. If the vintage nectar gauntlet was previously cleared, the hatch closes off and the conversation with Creige happens every time.
-    - Halfway_01__right1: collider obstacle.
 
-### Grand_Gate
-    - Coral_10__left1: collider obstacle.
-    - Coral_10__right1: collider obstacle.
+(I got lazy with documenting permanent obstacle handling - basically anything that doesn't have an ObstacleSaveInfo needs to be reverified).
 
-### Nameless_Town
-
-### The_Mist
-    - Dust_Maze_08_completed__right1: collider obstacle.
-
-### Chapel_of_the_Wanderer
-    - Name is cut off in the area selection UI.
-
-### Coral_Tower
-
-### First_Shrine
-
-### Voltnest
+The below areas have been checked when using the old door warp coroutine - many issues with softlocks/camera are likely already fixed with the new coroutine.
 
 ### Blasted_Steps
     - Bellway_08: game softlocks if door warping to this scene during Act 3 if bell beast fast travel isn't unlocked.
@@ -487,6 +455,43 @@ The below areas have been checked when using the new door warp coroutine.
     - Greymoor_20b__right1: same thing happens with the door from here.
     - Greymoor_20c: titled area should be Chapel of the Reaper.
     - Room_CrowCourt__bot1: collider obstacle.
+
+### Unknown
+    - Memory_Needolin: map/titled area should be Bellhart.
+    - Memory_Needolin__right1: abnormal camera.
+    - Memory_Red: map area should be Mosslands and titled area should be Ruined Chapel.
+    - Memory_Red: multiple door names in the UI look the same.
+    - Memory_Red__door_enterRedMemory_Beast: background graphics missing.
+    - Memory_Red__door_enterRedMemory_Hive: background graphics missing.
+    - Memory_Red__door_enterRedMemory_Hive: background graphics missing.
+    - Memory_Red__door_wakeInRedMemory_Beast: visual glitch with hornet appearing for a split second before cutscene.
+    - Memory_Red__door_wakeInRedMemory_Hive: visual glitch with hornet appearing for a split second before cutscene.
+    - Memory_Red__door_wakeInRedMemory_Weaver: visual glitch with hornet appearing for a split second before cutscene.
+    - Room_Caravan_Interior__right1: map/titled area should be Greymoor.
+    - Room_Caravan_Spa__left1: map/titled area and flipped transition would depend on current position of flea caravan.
+
+### Exhaust_Organ
+
+### Halfway_Home
+    - Halfway_01__right1: collider obstacle.
+
+### Grand_Gate
+    - Coral_10__left1: collider obstacle. Also updates one of the main quests.
+    - Coral_10__right1: collider obstacle.
+
+### Nameless_Town
+
+### The_Mist
+    - Dust_Maze_08_completed__right1: collider obstacle.
+
+### Chapel_of_the_Wanderer
+    - Name is cut off in the area selection UI.
+
+### Coral_Tower
+
+### First_Shrine
+
+### Voltnest
 
 ### Doors with dynamic targets
     - Shadow_04__left1: collider obstacle.
