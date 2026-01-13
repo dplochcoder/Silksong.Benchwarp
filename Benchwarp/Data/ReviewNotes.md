@@ -50,6 +50,9 @@ The following areas have only complex obstacles unhandled.
     - Cog_Dancers__bot1: collider obstacle, if Cogwork Dancers isn't defeated. Not handled whatsoever at the moment due to the Cogwork Dancers boss being affected.
     - Cog_Dancers__bot2: collider obstacle, if Cogwork Dancers isn't defeated. Not handled whatsoever at the moment due to the Cogwork Dancers boss being affected.
 
+### Shellwood
+    - Shellwood_25__door1: Game saving on entry still unhandled. Needs permanent obstacle handling (keep door open when entering scene from all transitions)
+
 The following areas have not been handled at all:
 
 ### Sinner's_Road
@@ -76,24 +79,6 @@ The following areas have not been handled at all:
     - Library_12: map/titled area should be Underworks.
     - Library_12__right1: collider obstacle.
     - Library_12b: map/titled area should be Underworks.
-
-### Shellwood
-    - Bellshrine_03__right1: collider obstacle.
-    - Shellwood_01__left2: collider obstacle.
-    - Shellwood_01__right1: collider obstacle.
-    - Shellwood_01b__right3: collider obstacle.
-    - Shellwood_02__right2: collider obstacle.
-    - Shellwood_03__bot1: collider obstacle.
-    - Shellwood_04b__left1: collider obstacle.
-    - Shellwood_08c__right1: collider obstacle.
-    - Shellwood_11: map/titled area should be Grand Gate.
-    - Shellwood_13__right1: collider obstacle.
-    - Shellwood_15__left1: collider obstacle.
-    - Shellwood_19__left1: collider obstacle.
-    - Shellwood_22: map/titled area should be Grand Gate.
-    - Shellwood_25__door1: game saves and door closes on entry.
-    - Shellwood_25__left1: collider obstacle.
-    - Shellwood_25b: titled area should be Chapel of the Witch.
 
 ### The_Slab
     - Slab_02__left1: collider obstacle.
@@ -502,6 +487,24 @@ The following areas have not been handled at all:
     - Cog_06__right1: collider obstacle.
     - Cog_Dancers__top1: collider obstacle. Different objects in Act 3.
     - Cog_11_Destroyed__left1: attempting to door warp here softlocks the game, regardless of Act 3 or not. The scene probably doesn't exist.
+
+### Shellwood
+    - Bellshrine_03__right1: collider obstacle.
+    - Shellwood_01__left2: collider obstacle.
+    - Shellwood_01__right1: collider obstacle.
+    - Shellwood_01b__right3: collider obstacle.
+    - Shellwood_02__right2: collider obstacle.
+    - Shellwood_03__bot1: collider obstacle.
+    - Shellwood_04b__left1: collider obstacle.
+    - Shellwood_08c__right1: collider obstacle.
+    - Shellwood_11: map/titled area should be Grand Gate.
+    - Shellwood_13__right1: collider obstacle.
+    - Shellwood_15__left1: collider obstacle.
+    - Shellwood_19__left1: collider obstacle.
+    - Shellwood_22: map/titled area should be Grand Gate.
+    - Shellwood_25__door1: game saves and door closes on entry.
+    - Shellwood_25__left1: collider obstacle.
+    - Shellwood_25b: titled area should be Chapel of the Witch.
 
 ### Doors with dynamic targets
     - Shadow_04__left1: collider obstacle.

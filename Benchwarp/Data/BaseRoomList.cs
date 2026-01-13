@@ -5152,8 +5152,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Shellwood_11,
         MapZone = MapZone.SHELLWOOD_THICKET,
-        MapArea = MapAreaNames.Shellwood,
-        TitledArea = TitledAreaNames.Shellwood,
+        MapArea = MapAreaNames.Grand_Gate,
+        TitledArea = TitledAreaNames.Grand_Gate,
         Gates = new([
             Shellwood_11__right1,
             Shellwood_11__right2,
@@ -5273,8 +5273,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Shellwood_22,
         MapZone = MapZone.SHELLWOOD_THICKET,
-        MapArea = MapAreaNames.Shellwood,
-        TitledArea = TitledAreaNames.Shellwood,
+        MapArea = MapAreaNames.Grand_Gate,
+        TitledArea = TitledAreaNames.Grand_Gate,
         Gates = new([
             Shellwood_22__door1,
             Shellwood_22__right1,
@@ -5298,7 +5298,7 @@ public static class BaseRoomList
         Name = SceneNames.Shellwood_25b,
         MapZone = MapZone.SHELLWOOD_THICKET,
         MapArea = MapAreaNames.Shellwood,
-        TitledArea = TitledAreaNames.Shellwood,
+        TitledArea = TitledAreaNames.Chapel_of_the_Witch,
         Gates = new([
             Shellwood_25b__door_curseSequenceEnd,
             Shellwood_25b__left1,

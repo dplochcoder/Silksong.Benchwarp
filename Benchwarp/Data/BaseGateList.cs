@@ -276,7 +276,12 @@ public static class BaseGateList
     };
     public static DoorData Bellshrine_02__right1 { get; } = new(new(Bellshrine_02, right1), new(Greymoor_02, left2));
     public static DoorData Bellshrine_03__left1 { get; } = new(new(Bellshrine_03, left1), new(Shellwood_08, right1));
-    public static DoorData Bellshrine_03__right1 { get; } = new(new(Bellshrine_03, right1), new(Shellwood_19, left1));
+    public static DoorData Bellshrine_03__right1 { get; } = new(new(Bellshrine_03, right1), new(Shellwood_19, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("bellshrine_gate_curved (1)", ObstacleType.OneWayMechanismEntry, ObstacleSeverity.LimitsRoomAccess, new PlayerDataBoolSaveInfo(nameof(PlayerData.bellShrineShellwood)))
+        ])
+    };
     public static DoorData Bellshrine_05__left1 { get; } = new(new(Bellshrine_05, left1), new(Bone_East_12, right1));
     public static DoorData Bellshrine_05__right1 { get; } = new(new(Bellshrine_05, right1), new(Bone_East_02, left1))
     {
@@ -1872,25 +1877,55 @@ public static class BaseGateList
     public static DoorData Shadow_Weavehome__left1 { get; } = new(new(Shadow_Weavehome, left1), new(Shadow_09, right1));
     public static DoorData Shellgrave__bot1 { get; } = new(new(Shellgrave, bot1), new(Shellwood_04b, top2));
     public static DoorData Shellwood_01__left1 { get; } = new(new(Shellwood_01, left1), new(Shellwood_01b, right2));
-    public static DoorData Shellwood_01__left2 { get; } = new(new(Shellwood_01, left2), new(Shellwood_02, right2));
-    public static DoorData Shellwood_01__right1 { get; } = new(new(Shellwood_01, right1), new(Belltown_Room_shellwood, left1));
+    public static DoorData Shellwood_01__left2 { get; } = new(new(Shellwood_01, left2), new(Shellwood_02, right2))
+    {
+        Obstacles = new([
+            new ObstacleInfo("GameObject (3)/Shellwood_large_gates (1)/Gate Parent/Gate", ObstacleType.OneWayMechanismExit, ObstacleSeverity.LimitsRoomAccess, new PersistentBoolSaveInfo(SceneName: Shellwood_02, ID: "Hornet_pressure_plate"))
+        ])
+    };
+    public static DoorData Shellwood_01__right1 { get; } = new(new(Shellwood_01, right1), new(Belltown_Room_shellwood, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Wasp Scene/Hive Scene/Shellwood Hive", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess, new PersistentBoolSaveInfo())
+        ])
+    };
     public static DoorData Shellwood_01__right2 { get; } = new(new(Shellwood_01, right2), new(Belltown_07, left1));
     public static DoorData Shellwood_01b__left1 { get; } = new(new(Shellwood_01b, left1), new(Shellwood_20, right1));
     public static DoorData Shellwood_01b__left2 { get; } = new(new(Shellwood_01b, left2), new(Shellwood_02, right1));
     public static DoorData Shellwood_01b__right1 { get; } = new(new(Shellwood_01b, right1), new(Shellwood_13, left2));
     public static DoorData Shellwood_01b__right2 { get; } = new(new(Shellwood_01b, right2), new(Shellwood_01, left1));
-    public static DoorData Shellwood_01b__right3 { get; } = new(new(Shellwood_01b, right3), new(Shellwood_15, left1));
+    public static DoorData Shellwood_01b__right3 { get; } = new(new(Shellwood_01b, right3), new(Shellwood_15, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("wall_patch", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.shellwoodTwigShortcut)))
+        ])
+    };
     public static DoorData Shellwood_02__left2 { get; } = new(new(Shellwood_02, left2), new(Shellwood_16, right1));
     public static DoorData Shellwood_02__left3 { get; } = new(new(Shellwood_02, left3), new(Shellwood_Witch, right1));
     public static DoorData Shellwood_02__right1 { get; } = new(new(Shellwood_02, right1), new(Shellwood_01b, left2));
-    public static DoorData Shellwood_02__right2 { get; } = new(new(Shellwood_02, right2), new(Shellwood_01, left2));
-    public static DoorData Shellwood_03__bot1 { get; } = new(new(Shellwood_03, bot1), new(Mosstown_03, top1));
+    public static DoorData Shellwood_02__right2 { get; } = new(new(Shellwood_02, right2), new(Shellwood_01, left2))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Shellwood_large_gates-EDITED (1)/Gate Parent", ObstacleType.OneWayMechanismEntry, ObstacleSeverity.LimitsRoomAccess, new PersistentBoolSaveInfo(ID: "Hornet_pressure_plate"))
+        ])
+    };
+    public static DoorData Shellwood_03__bot1 { get; } = new(new(Shellwood_03, bot1), new(Mosstown_03, top1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("One Way Wall", ObstacleType.OneWayBreakableExit, ObstacleSeverity.AbnormalVisual, new PersistentBoolSaveInfo(ID: "Shellwood Twig Wall"))
+        ])
+    };
     public static DoorData Shellwood_03__left1 { get; } = new(new(Shellwood_03, left1), new(Shellwood_19, right1));
     public static DoorData Shellwood_03__left3 { get; } = new(new(Shellwood_03, left3), new(Shellwood_04b, right1));
     public static DoorData Shellwood_03__right1 { get; } = new(new(Shellwood_03, right1), new(Shellwood_10, left3));
     public static DoorData Shellwood_03__right2 { get; } = new(new(Shellwood_03, right2), new(Shellwood_14, left1));
     public static DoorData Shellwood_03__right3 { get; } = new(new(Shellwood_03, right3), new(Shellwood_16, left1));
-    public static DoorData Shellwood_04b__left1 { get; } = new(new(Shellwood_04b, left1), new(Shellwood_08c, right1));
+    public static DoorData Shellwood_04b__left1 { get; } = new(new(Shellwood_04b, left1), new(Shellwood_08c, right1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Shellwood Twig Wall (1)", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo())
+        ])
+    };
     public static DoorData Shellwood_04b__right1 { get; } = new(new(Shellwood_04b, right1), new(Shellwood_03, left3));
     public static DoorData Shellwood_04b__top1 { get; } = new(new(Shellwood_04b, top1), new(Shellwood_04c, bot1));
     public static DoorData Shellwood_04b__top2 { get; } = new(new(Shellwood_04b, top2), new(Shellgrave, bot1));
@@ -1900,7 +1935,12 @@ public static class BaseGateList
     public static DoorData Shellwood_08__left1 { get; } = new(new(Shellwood_08, left1), new(Coral_19, right1));
     public static DoorData Shellwood_08__right1 { get; } = new(new(Shellwood_08, right1), new(Bellshrine_03, left1));
     public static DoorData Shellwood_08c__left1 { get; } = new(new(Shellwood_08c, left1), new(Aspid_01, right2));
-    public static DoorData Shellwood_08c__right1 { get; } = new(new(Shellwood_08c, right1), new(Shellwood_04b, left1));
+    public static DoorData Shellwood_08c__right1 { get; } = new(new(Shellwood_08c, right1), new(Shellwood_04b, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Shellwood Twig Wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo())
+        ])
+    };
     public static DoorData Shellwood_10__left1 { get; } = new(new(Shellwood_10, left1), new(Shellwood_11, right1));
     public static DoorData Shellwood_10__left2 { get; } = new(new(Shellwood_10, left2), new(Shellwood_11, right2));
     public static DoorData Shellwood_10__left3 { get; } = new(new(Shellwood_10, left3), new(Shellwood_03, right1));
@@ -1914,9 +1954,21 @@ public static class BaseGateList
     public static DoorData Shellwood_11b_Memory__door_wakeInMemory { get; } = new(new(Shellwood_11b_Memory, door_wakeInMemory));
     public static DoorData Shellwood_13__left1 { get; } = new(new(Shellwood_13, left1), new(Shellwood_18, right1));
     public static DoorData Shellwood_13__left2 { get; } = new(new(Shellwood_13, left2), new(Shellwood_01b, right1));
-    public static DoorData Shellwood_13__right1 { get; } = new(new(Shellwood_13, right1), new(Belltown_04, left1));
+    public static DoorData Shellwood_13__right1 { get; } = new(new(Shellwood_13, right1), new(Belltown_04, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Bell Wall Tall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+            new ObstacleInfo("Bell Wall Tall (1)", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+            new ObstacleInfo("Bell Wall Tall (2)", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo())
+        ])
+    };
     public static DoorData Shellwood_14__left1 { get; } = new(new(Shellwood_14, left1), new(Shellwood_03, right2));
-    public static DoorData Shellwood_15__left1 { get; } = new(new(Shellwood_15, left1), new(Shellwood_01b, right3));
+    public static DoorData Shellwood_15__left1 { get; } = new(new(Shellwood_15, left1), new(Shellwood_01b, right3))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Shellwood Twig Wall (1)", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo())
+        ])
+    };
     public static DoorData Shellwood_15__right1 { get; } = new(new(Shellwood_15, right1), new(Belltown_04, left2));
     public static DoorData Shellwood_16__left1 { get; } = new(new(Shellwood_16, left1), new(Shellwood_03, right3));
     public static DoorData Shellwood_16__right1 { get; } = new(new(Shellwood_16, right1), new(Shellwood_02, left2));
@@ -1924,14 +1976,33 @@ public static class BaseGateList
     public static DoorData Shellwood_18__right1 { get; } = new(new(Shellwood_18, right1), new(Shellwood_13, left1));
     public static DoorData Shellwood_18__top1 { get; } = new(new(Shellwood_18, top1), new(Shellwood_26, bot1));
     public static DoorData Shellwood_19__door_fastTravelExit { get; } = new(new(Shellwood_19, door_fastTravelExit));
-    public static DoorData Shellwood_19__left1 { get; } = new(new(Shellwood_19, left1), new(Bellshrine_03, right1));
+    public static DoorData Shellwood_19__left1 { get; } = new(new(Shellwood_19, left1), new(Bellshrine_03, right1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Bellshrine gate (1)", ObstacleType.OneWayMechanismExit, ObstacleSeverity.LimitsRoomAccess, new PlayerDataBoolSaveInfo(nameof(PlayerData.bellShrineShellwood)))
+        ])
+    };
     public static DoorData Shellwood_19__right1 { get; } = new(new(Shellwood_19, right1), new(Shellwood_03, left1));
     public static DoorData Shellwood_20__left1 { get; } = new(new(Shellwood_20, left1), new(Shellwood_10, right2));
     public static DoorData Shellwood_20__right1 { get; } = new(new(Shellwood_20, right1), new(Shellwood_01b, left1));
     public static DoorData Shellwood_22__door1 { get; } = new(new(Shellwood_22, door1), new(Shellwood_11b, right1));
     public static DoorData Shellwood_22__right1 { get; } = new(new(Shellwood_22, right1), new(Under_27, left1));
-    public static DoorData Shellwood_25__door1 { get; } = new(new(Shellwood_25, door1), new(Shellwood_25b, left1));
-    public static DoorData Shellwood_25__left1 { get; } = new(new(Shellwood_25, left1), new(Mosstown_03, right2));
+    public static DoorData Shellwood_25__door1 { get; } = new(new(Shellwood_25, door1), new(Shellwood_25b, left1))
+    {
+        Obstacles = new([
+            new TransitionObstacleInfo("door1", true, ObstacleType.ClosedAfterProgression, ObstacleSeverity.LimitsExitAccess),
+            new ObstacleInfo("Witch Chapel Door Control", ObstacleType.ClosedAfterProgression, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
+    public static DoorData Shellwood_25__left1 { get; } = new(new(Shellwood_25, left1), new(Mosstown_03, right2))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Shellwood Twig Wall (3)", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+            new ObstacleInfo("Shellwood Twig Wall (2)", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+            new ObstacleInfo("Shellwood Twig Wall (1)", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+            new ObstacleInfo("Shellwood Twig Wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo())
+        ])
+    };
     public static DoorData Shellwood_25b__door_curseSequenceEnd { get; } = new(new(Shellwood_25b, door_curseSequenceEnd));
     public static DoorData Shellwood_25b__left1 { get; } = new(new(Shellwood_25b, left1), new(Shellwood_25, door1));
     public static DoorData Shellwood_26__bot1 { get; } = new(new(Shellwood_26, bot1), new(Shellwood_18, top1));
