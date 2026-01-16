@@ -1034,12 +1034,22 @@ public static class BaseGateList
     public static DoorData Coral_23__left2 { get; } = new(new(Coral_23, left2), new(Coral_39, right1));
     public static DoorData Coral_23__right1 { get; } = new(new(Coral_23, right1), new(Coral_35b, left3));
     public static DoorData Coral_24__left1 { get; } = new(new(Coral_24, left1), new(Coral_35b, right2));
-    public static DoorData Coral_24__right1 { get; } = new(new(Coral_24, right1), new(Coral_26, left1));
+    public static DoorData Coral_24__right1 { get; } = new(new(Coral_24, right1), new(Coral_26, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Coral Crust Wall Tall (4)", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+        ])
+    };
     public static DoorData Coral_25__bot1 { get; } = new(new(Coral_25, bot1), new(Coral_34, top1));
     public static DoorData Coral_25__right1 { get; } = new(new(Coral_25, right1), new(Coral_23, left1));
     public static DoorData Coral_26__left1 { get; } = new(new(Coral_26, left1), new(Coral_24, right1));
     public static DoorData Coral_26__left2 { get; } = new(new(Coral_26, left2), new(Coral_44, right1));
-    public static DoorData Coral_26__right1 { get; } = new(new(Coral_26, right1), new(Coral_38, left1));
+    public static DoorData Coral_26__right1 { get; } = new(new(Coral_26, right1), new(Coral_38, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Coral Crust Wall Tall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+        ])
+    };
     public static DoorData Coral_27__left1 { get; } = new(new(Coral_27, left1), new(Coral_28, right1));
     public static DoorData Coral_27__right1 { get; } = new(new(Coral_27, right1), new(Coral_35b, left2));
     public static DoorData Coral_28__door1 { get; } = new(new(Coral_28, door1), new(Coral_Tower_01, left1));
@@ -1068,19 +1078,35 @@ public static class BaseGateList
             new ObstacleInfo("boulder_shortcut (1)", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo(SceneName: Coral_35b, ID: "Stalactite Group Bottom"))
         ])
     };
-    public static DoorData Coral_35b__bot1 { get; } = new(new(Coral_35b, bot1), new(Coral_35, top1));
+    public static DoorData Coral_35b__bot1 { get; } = new(new(Coral_35b, bot1), new(Coral_35, top1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("boulder_shortcut", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsExitAccess, new PersistentBoolSaveInfo(ID: "Stalactite Group Bottom")),
+            new ObstacleInfo("boulder_shortcut/shortcut_block", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsExitAccess),
+        ])
+    };
     public static DoorData Coral_35b__door1 { get; } = new(new(Coral_35b, door1), new(Coral_29, left1));
     public static DoorData Coral_35b__left2 { get; } = new(new(Coral_35b, left2), new(Coral_27, right1));
     public static DoorData Coral_35b__left3 { get; } = new(new(Coral_35b, left3), new(Coral_23, right1));
     public static DoorData Coral_35b__left4 { get; } = new(new(Coral_35b, left4), new(Coral_40, right1));
-    public static DoorData Coral_35b__left5 { get; } = new(new(Coral_35b, left5), new(Coral_41, right1));
+    public static DoorData Coral_35b__left5 { get; } = new(new(Coral_35b, left5), new(Coral_41, right1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Coral Crust Wall Tall (2)", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+        ])
+    };
     public static DoorData Coral_35b__right1 { get; } = new(new(Coral_35b, right1), new(Coral_44, left1));
     public static DoorData Coral_35b__right2 { get; } = new(new(Coral_35b, right2), new(Coral_24, left1));
     public static DoorData Coral_36__left1 { get; } = new(new(Coral_36, left1), new(Coral_35, right2));
     public static DoorData Coral_37__left1 { get; } = new(new(Coral_37, left1), new(Coral_12, right1));
     public static DoorData Coral_38__bot1 { get; } = new(new(Coral_38, bot1), new(Coral_32, top1));
     public static DoorData Coral_38__left1 { get; } = new(new(Coral_38, left1), new(Coral_26, right1));
-    public static DoorData Coral_38__right1 { get; } = new(new(Coral_38, right1), new(Bellshrine_Coral, left1));
+    public static DoorData Coral_38__right1 { get; } = new(new(Coral_38, right1), new(Bellshrine_Coral, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Coral Crust Wall Tall (2)", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+        ])
+    };
     public static DoorData Coral_39__right1 { get; } = new(new(Coral_39, right1), new(Coral_23, left2));
     public static DoorData Coral_40__right1 { get; } = new(new(Coral_40, right1), new(Coral_35b, left4));
     public static DoorData Coral_41__right1 { get; } = new(new(Coral_41, right1), new(Coral_35b, left5));
