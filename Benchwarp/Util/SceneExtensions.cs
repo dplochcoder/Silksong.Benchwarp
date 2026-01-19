@@ -18,8 +18,12 @@ namespace Benchwarp.Util
             if (index >= 0)
             {
                 string rootName = path.Substring(0, index);
-                GameObject root = rootObjects.FirstOrDefault(g => g.name == rootName);
-                if (root != null) result = root.transform.Find(path.Substring(index + 1)).gameObject;
+                foreach (GameObject root in rootObjects)
+                {
+                    if (root.name != rootName) continue;
+                    result = root.transform.Find(path.Substring(index + 1))?.gameObject;
+                    if (result != null) break;
+                }
             }
             else
             {

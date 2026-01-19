@@ -4,7 +4,7 @@
 
 Anything that doesn't have ObstacleSaveInfo likely also needs permant obstacle handling.
 
-The following areas have only complex obstacles unhandled.
+The following areas have obstacles unhandled to some extent.
 
 ### Bone_Bottom
     - Bonegrave__door1: Still needs permanent obstacle handling. Need to handle door staying open when entering from any transition.
@@ -50,123 +50,27 @@ The following areas have only complex obstacles unhandled.
     - Cog_Dancers__bot1: collider obstacle, if Cogwork Dancers isn't defeated. Not handled whatsoever at the moment due to the Cogwork Dancers boss being affected.
     - Cog_Dancers__bot2: collider obstacle, if Cogwork Dancers isn't defeated. Not handled whatsoever at the moment due to the Cogwork Dancers boss being affected.
 
-The following areas have not been handled at all:
-
-### Sinner's_Road
-    - Dust_02__right1: collider obstacle.
-    - Dust_04__left1: collider obstacle.
-    - Dust_04__right1: collider obstacle.
-    - Dust_05__right1: collider obstacle (lever).
-    - Dust_06__left1: collider obstacle.
-    - Dust_06__right1: collider obstacle.
-    - Dust_09: map/titled area should be Bilewater.
-    - Dust_Chef__left1: collider obstacle (lever).
-
-### Whispering_Vaults
-    - Library_01__left3: collider obstacle.
-    - Library_03: map/titled area for LEFT SIDE corresponds to Choral Chambers, and RIGHT SIDE is Whispering Vaults.
-    - Library_04__right1: collider obstacle.
-    - Library_04__top1: collider obstacle.
-    - Library_07__bot1/bot2/bot3: big bot transition at three different points.
-    - Library_07__top1: obstacles on floor on entry. Keep or remove?
-    - Library_11: map/titled area should be Underworks.
-    - Library_11__left3: collider obstacle.
-    - Library_11b: map/titled area should be Underworks.
-    - Library_11b__right1: collider obstacle.
-    - Library_12: map/titled area should be Underworks.
-    - Library_12__right1: collider obstacle.
-    - Library_12b: map/titled area should be Underworks.
-
 ### Shellwood
-    - Bellshrine_03__right1: collider obstacle.
-    - Shellwood_01__left2: collider obstacle.
-    - Shellwood_01__right1: collider obstacle.
-    - Shellwood_01b__right3: collider obstacle.
-    - Shellwood_02__right2: collider obstacle.
-    - Shellwood_03__bot1: collider obstacle.
-    - Shellwood_04b__left1: collider obstacle.
-    - Shellwood_08c__right1: collider obstacle.
-    - Shellwood_11: map/titled area should be Grand Gate.
-    - Shellwood_13__right1: collider obstacle.
-    - Shellwood_15__left1: collider obstacle.
-    - Shellwood_19__left1: collider obstacle.
-    - Shellwood_22: map/titled area should be Grand Gate.
-    - Shellwood_25__door1: game saves and door closes on entry.
-    - Shellwood_25__left1: collider obstacle.
-    - Shellwood_25b: titled area should be Chapel of the Witch.
-
-### The_Slab
-    - Slab_10c__door1: collider obstacle (door locked by numerous chains).
-    - Slab_16__door1: arrives at bot1 instead. Existence of door1 seems to depend on Broodmother quest (should be checked).
-    - Slab_23__right1: collider obstacle. Gate is shut and the arena starts.
+    - Shellwood_25__door1: Game saving on entry still unhandled. Needs permanent obstacle handling (keep door open when entering scene from all transitions)
 
 ### The_Marrow
-    - Bellshrine__right1: collider obstacle.
-    - Bone_01__right1: collider obstacle.
-    - Bone_01__top2_extra: corresponds to the left side of the same top transition as top2. Never normally enters via this transition.
-    - Bone_01b: map area should be Mosslands and titled area should be Bone Bottom.
-    - Bone_01b__left1: collider obstacle.
-    - Bone_03__left1: collider obstacle.
-    - Bone_05b: map area should be Mosslands and titled area should be Bone Bottom.
-    - Bone_06__left1: collider obstacle.
-    - Bone_10__door2: Not Act 3: arrives in the correct position, but the door/spa caravan is only there if the first flea quest hasn't been completed and Kratt is saved. Act 3: arrives by bot1 instead.
-    - Bone_11: map area should be Mosslands and titled area should be Bone Bottom.
-    - Bone_11__bot1: collider obstacle.
-    - Bone_11__top1: collider obstacle.
-    - Bone_11b: map area should be Mosslands and titled area should be Bone Bottom.
-    - Bone_11b__top1: collider obstacle.
-    - Bone_16__top1: collider obstacle (hidden area behind breakable wall to the left).
-    - Bone_Steel_Servant: map area should be Mosslands and titled area should be Bone Bottom.
-
-### Choral_Chambers
-    - Song_01__bot1: collider obstacle.
-    - Song_01c__left1: collider obstacle.
-    - Song_01c: map/titled area should be Grand Gate.
-    - Song_01c__top1: collider obstacle.
-    - Song_03__top1: collider obstacle.
-    - Song_04__bot1: gate animation doesn't trigger on entering scene.
-    - Song_05__right4: collider obstacle.
-    - Song_10__right1: collider obstacle (entire spa room revealed from breaking wall to the left). Also the lever gate at the transition itself.
-    - Song_11__left4: collider obstacle.
-    - Song_11__right2: collider obstacle.
-    - Song_19_entrance: map/titled area should be Grand Gate.
-    - Song_19_entrance__left1: collider obstacle.
-    - Song_19_entrance__right1: collider obstacle.
-    - Song_20__right_cutsceneEntry: functionally the same as right6, but with a short cutscene.
-    - Song_25__top1: collider obstacle.
-    - Song_25__top2: In Act 3 the sequence of Hornet being weak happens if not previously triggered.
-    - Song_27__left1: collider obstacle.
-    - Song_Enclave__bot1: collider obstacle.
-    - Song_Enclave__door1: In Act 3, arrives by left2 instead. 
-    - Song_Tower_01__right1: collider obstacle. Lace fight immediately starts.
-    - Song_Tower_Destroyed: map/titled area should be The Cradle.
-    - Song_Tower_Destroyed__bot1: breaking animation of object plays, but ideally the object should not be there at all on entry.
+    - Bone_11b__top1: An Animator normally moves the blocking platform to the middle of the room. Currently unhandled for NoSave.
+    - Bone_10__door2: Still needs permanent obstacle handling.
 
 ### Whiteward
-    - Ward_01__right2: Collider obstacle.
-    - Ward_02__bot1: Works fine. Note-worthy: Unravelled can't be fought coming from here.
-    - Ward_03__door1: Door1 is not recognized - warps to bot1 instead.
-    - Ward_06__bot1: Automatically flings you into a hazard with invincibility. Funny softlock.
-    - Ward_09__left1: Leads to Ward_03__bot1 instead of the door if it hasn't been unlocked.
+    - Ward_03__door1: Needs permanent obstacle handling (normally checks quest progress).
+    - Ward_06__bot1: Fully unhandled for now, because entering the scene this way forces Hornet into a hazard.
 
-### Sands of Karak
-    - Coral_23__left1/left2: Camera shows partial black screen.
-    - Coral_24__right1: Collider obstacle.
-    - Coral_26__right1: Collider obstacle.
-    - Coral_35b__bot1: One-way wall from Coral_35 - warping is possible but can't enter the transition.
-    - Coral_35b__left5: Collider obstacle.
-    - Coral_38__right1: Collider obstacle - bypassable by taking damage.
+The following gates involve a lot of complex objects (FSMs etc.) and have largely been unhandled.
 
 ### Doors with missing targets
-    The following was all done from a fresh save state.
-
     - Ant_19__door_memoryEnd: Gives the player Beast Crest and saves the game. The HUD isn't correct (doesn't show Beast Crest flair), but the crest is active and also appears in inventory. The screen is black if you already have Beast Crest.
     - Ant_Queen__door_wakeOnGround: the game saves.
     - Aqueduct_05__door_caravanTravelEnd: Arrives at left1 instead, because the door is in the "caravan" additive scene.
-    - Arborium_Tube__door_tubeEnter, and every other Ventrica arrival: Visual bug where the pedestal before buying the Ventrica overlaps with the arriving elevator.
+    - Arborium_Tube__door_tubeEnter, and every other Ventrica arrival: No permanent handling.
     - Belltown_basement__door_fastTravelExit, and every other Bell Beast arrival: Instead of the animation of Hornet leaping out of the bells, she appears in front of the pedestal.
     - Belltown_Shrine__door_wakeOnGround: the game saves.
-    - Bone_05__door_cinematicEnd: Hornet is stuck on the ground and cannot get up.
+    - Bone_05__door_cinematicEnd: the game saves.
     - Bone_East_08__door_cinematicEnd: Hornet instantly takes damage in lava and hazard respawns.
     - Chapel_Wanderer__door_memoryEnd: Gives the player Wanderer's Crest and saves the game. The HUD isn't correct (doesn't show Wanderer's Crest flair), but the crest is active and also appears in inventory. The screen is black if the player already have Wanderer's Crest.
     - Clover_01__door_wakeOnGround: Immediately enters conversation with Green Prince if not already triggered. Enters a funny state where Hornet can move during conversation. The game saves.
@@ -191,10 +95,38 @@ The following areas have not been handled at all:
     - Tut_04__door_ritualEnd: Arrives at right1 instead.
     - Tut_05__door_memoryEnd: Gives and equips the Shaman crest, then saves the game. The screen is black. The HUD isn't correct (doesn't show Reaper Crest flair), but the crest is active and also appears in inventory.
     - Under_20__door_memoryEnd: Gives the player Architect Crest and saves the game. The HUD isn't correct (doesn't show Architect Crest flair), but the crest is active and also appears in inventory. The screen is black if the player already has Architect Crest.
-    - Ward_02__door_cinematicEnd: Hornet never gets up
+    - Ward_02__door_cinematicEnd: the game saves.
 
-### Doors with dynamic targets
-    - Dust_09__right1: collider obstacle.
+The following areas have not been handled at all:
+
+### The_Slab
+    - Slab_10c__door1: collider obstacle (door locked by numerous chains).
+    - Slab_16__door1: arrives at bot1 instead. Existence of door1 seems to depend on Broodmother quest (should be checked).
+    - Slab_23__right1: collider obstacle. Gate is shut and the arena starts.
+
+### Choral_Chambers
+    - Song_01__bot1: collider obstacle.
+    - Song_01c__left1: collider obstacle.
+    - Song_01c: map/titled area should be Grand Gate.
+    - Song_01c__top1: collider obstacle.
+    - Song_03__top1: collider obstacle.
+    - Song_04__bot1: gate animation doesn't trigger on entering scene.
+    - Song_05__right4: collider obstacle.
+    - Song_10__right1: collider obstacle (entire spa room revealed from breaking wall to the left). Also the lever gate at the transition itself.
+    - Song_11__left4: collider obstacle.
+    - Song_11__right2: collider obstacle.
+    - Song_19_entrance: map/titled area should be Grand Gate.
+    - Song_19_entrance__left1: collider obstacle.
+    - Song_19_entrance__right1: collider obstacle.
+    - Song_20__right_cutsceneEntry: functionally the same as right6, but with a short cutscene.
+    - Song_25__top1: collider obstacle.
+    - Song_25__top2: In Act 3 the sequence of Hornet being weak happens if not previously triggered.
+    - Song_27__left1: collider obstacle.
+    - Song_Enclave__bot1: collider obstacle.
+    - Song_Enclave__door1: In Act 3, arrives by left2 instead. 
+    - Song_Tower_01__right1: collider obstacle. Lace fight immediately starts.
+    - Song_Tower_Destroyed: map/titled area should be The Cradle.
+    - Song_Tower_Destroyed__bot1: breaking animation of object plays, but ideally the object should not be there at all on entry.
 
 ## Resolved Notes
 
@@ -505,5 +437,83 @@ The following areas have not been handled at all:
     - Slab_21__left1: collider obstacle.
     - Slab_Cell_Quiet__left1: when flipped, it should be Slab_23__door2, not Slab_04__door1.
 
+### Whispering_Vaults
+    - Library_01__left3: collider obstacle.
+    - Library_03: map/titled area for LEFT SIDE corresponds to Choral Chambers, and RIGHT SIDE is Whispering Vaults.
+    - Library_04__right1: collider obstacle.
+    - Library_04__top1: collider obstacle.
+    - Library_07__bot1/bot2/bot3: big bot transition at three different points.
+    - Library_07__top1: obstacles on floor on entry. Keep or remove?
+    - Library_11: map/titled area should be Underworks.
+    - Library_11__left3: collider obstacle.
+    - Library_11b: map/titled area should be Underworks.
+    - Library_11b__right1: collider obstacle.
+    - Library_12: map/titled area should be Underworks.
+    - Library_12__right1: collider obstacle.
+    - Library_12b: map/titled area should be Underworks.
+
+### Sinner's_Road
+    - Dust_02__right1: collider obstacle.
+    - Dust_04__left1: collider obstacle.
+    - Dust_04__right1: collider obstacle.
+    - Dust_05__right1: collider obstacle (lever).
+    - Dust_06__left1: collider obstacle.
+    - Dust_06__right1: collider obstacle.
+    - Dust_09: map/titled area should be Bilewater.
+    - Dust_Chef__left1: collider obstacle (lever).
+
+### Shellwood
+    - Bellshrine_03__right1: collider obstacle.
+    - Shellwood_01__left2: collider obstacle.
+    - Shellwood_01__right1: collider obstacle.
+    - Shellwood_01b__right3: collider obstacle.
+    - Shellwood_02__right2: collider obstacle.
+    - Shellwood_03__bot1: collider obstacle.
+    - Shellwood_04b__left1: collider obstacle.
+    - Shellwood_08c__right1: collider obstacle.
+    - Shellwood_11: map/titled area should be Grand Gate.
+    - Shellwood_13__right1: collider obstacle.
+    - Shellwood_15__left1: collider obstacle.
+    - Shellwood_19__left1: collider obstacle.
+    - Shellwood_22: map/titled area should be Grand Gate.
+    - Shellwood_25__door1: game saves and door closes on entry.
+    - Shellwood_25__left1: collider obstacle.
+    - Shellwood_25b: titled area should be Chapel of the Witch.
+
+### The_Marrow
+    - Bellshrine__right1: collider obstacle.
+    - Bone_01__right1: collider obstacle.
+    - Bone_01__top2_extra: corresponds to the left side of the same top transition as top2. Never normally enters via this transition.
+    - Bone_01b: map area should be Mosslands and titled area should be Bone Bottom.
+    - Bone_01b__left1: collider obstacle.
+    - Bone_03__left1: collider obstacle.
+    - Bone_05b: map area should be Mosslands and titled area should be Bone Bottom.
+    - Bone_06__left1: collider obstacle.
+    - Bone_10__door2: Not Act 3: arrives in the correct position, but the door/spa caravan is only there if the first flea quest hasn't been completed and Kratt is saved. Act 3: arrives by bot1 instead.
+    - Bone_11: map area should be Mosslands and titled area should be Bone Bottom.
+    - Bone_11__bot1: collider obstacle.
+    - Bone_11__top1: collider obstacle.
+    - Bone_11b: map area should be Mosslands and titled area should be Bone Bottom.
+    - Bone_16__top1: collider obstacle (hidden area behind breakable wall to the left).
+    - Bone_Steel_Servant: map area should be Mosslands and titled area should be Bone Bottom.
+
+### Whiteward
+    - Ward_01__right2: Collider obstacle.
+    - Ward_02__bot1: Works fine. Note-worthy: Unravelled can't be fought coming from here.
+    - Ward_03__door1: Door1 is not recognized - warps to bot1 instead.
+    - Ward_09__left1: Leads to Ward_03__bot1 instead of the door if it hasn't been unlocked.
+
+### Sands of Karak
+    - Coral_23__left1/left2: Camera shows partial black screen.
+    - Coral_24__right1: Collider obstacle.
+    - Coral_26__right1: Collider obstacle.
+    - Coral_35b__bot1: One-way wall from Coral_35 - warping is possible but can't enter the transition.
+    - Coral_35b__left5: Collider obstacle.
+    - Coral_38__right1: Collider obstacle - bypassable by taking damage.
+
+### Doors with missing targets
+    - Arborium_Tube__door_tubeEnter, and every other Ventrica arrival: Visual bug where the pedestal before buying the Ventrica overlaps with the arriving elevator.
+
 ### Doors with dynamic targets
     - Shadow_04__left1: collider obstacle.
+    - Dust_09__right1: collider obstacle.

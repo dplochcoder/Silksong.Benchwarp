@@ -1033,7 +1033,7 @@ public static class BaseRoomList
             Bone_01__right1,
             Bone_01__right2,
             Bone_01__top2,
-            Bone_01__top2_extra,
+            //Bone_01__top2_extra,
         ]),
         ManuallyVerified = true,
     };
@@ -1041,8 +1041,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Bone_01b,
         MapZone = MapZone.MOSSTOWN,
-        MapArea = MapAreaNames.The_Marrow,
-        TitledArea = TitledAreaNames.The_Marrow,
+        MapArea = MapAreaNames.Mosslands,
+        TitledArea = TitledAreaNames.Bone_Bottom,
         Gates = new([
             Bone_01b__left1,
             Bone_01b__left2,
@@ -1127,8 +1127,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Bone_05b,
         MapZone = MapZone.MOSSTOWN,
-        MapArea = MapAreaNames.The_Marrow,
-        TitledArea = TitledAreaNames.The_Marrow,
+        MapArea = MapAreaNames.Mosslands,
+        TitledArea = TitledAreaNames.Bone_Bottom,
         Gates = new([
             Bone_05b__left1,
             Bone_05b__top1,
@@ -1210,8 +1210,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Bone_11,
         MapZone = MapZone.MOSSTOWN,
-        MapArea = MapAreaNames.The_Marrow,
-        TitledArea = TitledAreaNames.The_Marrow,
+        MapArea = MapAreaNames.Mosslands,
+        TitledArea = TitledAreaNames.Bone_Bottom,
         Gates = new([
             Bone_11__bot1,
             Bone_11__left1,
@@ -1225,8 +1225,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Bone_11b,
         MapZone = MapZone.MOSSTOWN,
-        MapArea = MapAreaNames.The_Marrow,
-        TitledArea = TitledAreaNames.The_Marrow,
+        MapArea = MapAreaNames.Mosslands,
+        TitledArea = TitledAreaNames.Bone_Bottom,
         Gates = new([
             Bone_11b__right1,
             Bone_11b__top1,
@@ -1795,8 +1795,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Bone_Steel_Servant,
         MapZone = MapZone.PATH_OF_BONE,
-        MapArea = MapAreaNames.The_Marrow,
-        TitledArea = TitledAreaNames.The_Marrow,
+        MapArea = MapAreaNames.Mosslands,
+        TitledArea = TitledAreaNames.Bone_Bottom,
         Gates = new([
             Bone_Steel_Servant__right1,
         ]),
@@ -3159,8 +3159,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Dust_09,
         MapZone = MapZone.DUSTPENS,
-        MapArea = MapAreaNames.Sinner_s_Road,
-        TitledArea = TitledAreaNames.Sinner_s_Road,
+        MapArea = MapAreaNames.Bilewater,
+        TitledArea = TitledAreaNames.Bilewater,
         Gates = new([
             Dust_09__door1,
             Dust_09__door2,
@@ -4067,8 +4067,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Library_11,
         MapZone = MapZone.LIBRARY,
-        MapArea = MapAreaNames.Whispering_Vaults,
-        TitledArea = TitledAreaNames.Whispering_Vaults,
+        MapArea = MapAreaNames.Underworks,
+        TitledArea = TitledAreaNames.Underworks,
         Gates = new([
             Library_11__left1,
             Library_11__left2,
@@ -4082,8 +4082,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Library_11b,
         MapZone = MapZone.DUSTPENS,
-        MapArea = MapAreaNames.Whispering_Vaults,
-        TitledArea = TitledAreaNames.Whispering_Vaults,
+        MapArea = MapAreaNames.Underworks,
+        TitledArea = TitledAreaNames.Underworks,
         Gates = new([
             Library_11b__left3,
             Library_11b__right1,
@@ -4094,8 +4094,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Library_12,
         MapZone = MapZone.LIBRARY,
-        MapArea = MapAreaNames.Whispering_Vaults,
-        TitledArea = TitledAreaNames.Whispering_Vaults,
+        MapArea = MapAreaNames.Underworks,
+        TitledArea = TitledAreaNames.Underworks,
         Gates = new([
             Library_12__door1,
             Library_12__left1,
@@ -4108,8 +4108,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Library_12b,
         MapZone = MapZone.LIBRARY,
-        MapArea = MapAreaNames.Whispering_Vaults,
-        TitledArea = TitledAreaNames.Whispering_Vaults,
+        MapArea = MapAreaNames.Underworks,
+        TitledArea = TitledAreaNames.Underworks,
         Gates = new([
             Library_12b__left1,
             Library_12b__top1,
@@ -5152,8 +5152,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Shellwood_11,
         MapZone = MapZone.SHELLWOOD_THICKET,
-        MapArea = MapAreaNames.Shellwood,
-        TitledArea = TitledAreaNames.Shellwood,
+        MapArea = MapAreaNames.Grand_Gate,
+        TitledArea = TitledAreaNames.Grand_Gate,
         Gates = new([
             Shellwood_11__right1,
             Shellwood_11__right2,
@@ -5273,8 +5273,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Shellwood_22,
         MapZone = MapZone.SHELLWOOD_THICKET,
-        MapArea = MapAreaNames.Shellwood,
-        TitledArea = TitledAreaNames.Shellwood,
+        MapArea = MapAreaNames.Grand_Gate,
+        TitledArea = TitledAreaNames.Grand_Gate,
         Gates = new([
             Shellwood_22__door1,
             Shellwood_22__right1,
@@ -5298,7 +5298,7 @@ public static class BaseRoomList
         Name = SceneNames.Shellwood_25b,
         MapZone = MapZone.SHELLWOOD_THICKET,
         MapArea = MapAreaNames.Shellwood,
-        TitledArea = TitledAreaNames.Shellwood,
+        TitledArea = TitledAreaNames.Chapel_of_the_Witch,
         Gates = new([
             Shellwood_25b__door_curseSequenceEnd,
             Shellwood_25b__left1,
