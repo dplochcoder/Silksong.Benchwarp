@@ -45,7 +45,7 @@ public partial class BenchwarpPlugin : BaseUnityPlugin
             harmony.PatchAll(GetType().Assembly);
             Patches.LanguageChangeHook.Hook();
             Patches.SaveGameHooks.Hook();
-
+            Patches.OverrideKnownRespawns.Hook();
             Components.GUIController.Setup();
         }
         catch (Exception e)
@@ -76,7 +76,7 @@ public partial class BenchwarpPlugin : BaseUnityPlugin
             HarmonyLib.Harmony.UnpatchID(HarmonyID);
             Patches.LanguageChangeHook.Unhook();
             Patches.SaveGameHooks.Unhook();
-
+            Patches.OverrideKnownRespawns.Unhook();
             Components.GUIController.Unload();
         }
         catch (Exception e)
