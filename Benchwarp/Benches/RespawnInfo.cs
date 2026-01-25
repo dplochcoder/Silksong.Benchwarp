@@ -1,4 +1,5 @@
 ﻿using GlobalEnums;
+using PrepatcherPlugin;
 
 namespace Benchwarp.Benches;
 
@@ -9,7 +10,7 @@ public sealed record RespawnInfo(string SceneName, string RespawnMarkerName, int
 {
     public static RespawnInfo FromPlayerData()
     {
-        return new(PlayerData.instance.respawnScene, PlayerData.instance.respawnMarkerName, PlayerData.instance.respawnType, PlayerData.instance.mapZone);
+        return new(PlayerDataAccess.respawnScene, PlayerDataAccess.respawnMarkerName, PlayerDataAccess.respawnType, PlayerDataAccess.mapZone);
     }
 
     public static bool ReferToSameMarker(RespawnInfo r1, RespawnInfo r2)
@@ -20,12 +21,12 @@ public sealed record RespawnInfo(string SceneName, string RespawnMarkerName, int
     RespawnInfo IRespawnInfo.GetRespawnInfo() => this;
     public void SetRespawn()
     {
-        PlayerData.instance.respawnScene = SceneName;
-        PlayerData.instance.respawnMarkerName = RespawnMarkerName;
-        PlayerData.instance.respawnType = RespawnType;
-        PlayerData.instance.mapZone = MapZone;
+        PlayerDataAccess.respawnScene = SceneName;
+        PlayerDataAccess.respawnMarkerName = RespawnMarkerName;
+        PlayerDataAccess.respawnType = RespawnType;
+        PlayerDataAccess.mapZone = MapZone;
     }
 
     public bool IsCurrentRespawn() 
-        => PlayerData.instance.respawnScene == SceneName && PlayerData.instance.respawnMarkerName == RespawnMarkerName;
+        => PlayerDataAccess.respawnScene == SceneName && PlayerDataAccess.respawnMarkerName == RespawnMarkerName;
 }

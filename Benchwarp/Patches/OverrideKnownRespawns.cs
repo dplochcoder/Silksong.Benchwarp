@@ -33,6 +33,12 @@ namespace Benchwarp.Patches
             }
 
             orig(self, out scene, out marker);
+            if (scene == "Tut_01" && self.playerData.respawnScene != "Tut_01")
+            {
+                BenchwarpPlugin.Instance.Logger.LogWarning($"Unrecognized respawn at " +
+                    $"{self.playerData.respawnMarkerName} in {self.playerData.respawnScene}, " +
+                    $"GameManager.GetRespawnInfo will fall through to Tut_01.");
+            }
         }
     }
 }

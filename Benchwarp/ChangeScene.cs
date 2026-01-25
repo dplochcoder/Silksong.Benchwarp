@@ -1,6 +1,7 @@
 ﻿using Benchwarp.Doors;
 using Benchwarp.Doors.Obstacles;
 using Benchwarp.Events;
+using PrepatcherPlugin;
 using UnityEngine.SceneManagement;
 
 namespace Benchwarp;
@@ -17,7 +18,7 @@ public static class ChangeScene
         }
         ModEvents.InvokeOnBenchwarp();
         
-        PlayerData.instance.atBench = false;
+        PlayerDataAccess.atBench = false;
 
         gm.SaveGame((worked) =>
         {
@@ -49,7 +50,7 @@ public static class ChangeScene
             yield return GameManager.instance.PauseGameToggleByMenu();
         }
 
-        PlayerData.instance.atBench = false;
+        PlayerDataAccess.atBench = false;
         if (HeroController.SilentInstance != null)
         {
             if (HeroController.instance.cState.onConveyor || HeroController.instance.cState.onConveyorV || HeroController.instance.cState.inConveyorZone)
