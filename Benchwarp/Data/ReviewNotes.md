@@ -50,6 +50,13 @@ The following areas have obstacles unhandled to some extent.
     - Cog_Dancers__bot1: collider obstacle, if Cogwork Dancers isn't defeated. Not handled whatsoever at the moment due to the Cogwork Dancers boss being affected.
     - Cog_Dancers__bot2: collider obstacle, if Cogwork Dancers isn't defeated. Not handled whatsoever at the moment due to the Cogwork Dancers boss being affected.
 
+### The_Slab
+    - Slab_16__door1: Still needs permanent (quest-based) obstacle handling.
+
+### Choral_Chambers
+    - Song_Enclave__door1: In Act 3, arrives by left2 instead. A bit annoying because the door1 transition only lives in the Normal World object hierarchy.
+    - Song_Tower_01__right1: Needs permanent obstacle handling (right now PdBool is for defeating Lace).
+
 ### Shellwood
     - Shellwood_25__door1: Game saving on entry still unhandled. Needs permanent obstacle handling (keep door open when entering scene from all transitions)
 
@@ -96,35 +103,6 @@ The following gates involve a lot of complex objects (FSMs etc.) and have largel
     - Tut_05__door_memoryEnd: Gives and equips the Shaman crest, then saves the game. The screen is black. The HUD isn't correct (doesn't show Reaper Crest flair), but the crest is active and also appears in inventory.
     - Under_20__door_memoryEnd: Gives the player Architect Crest and saves the game. The HUD isn't correct (doesn't show Architect Crest flair), but the crest is active and also appears in inventory. The screen is black if the player already has Architect Crest.
     - Ward_02__door_cinematicEnd: the game saves.
-
-The following areas have not been handled at all:
-
-### The_Slab
-    - Slab_16__door1: Still needs permanent (quest-based) obstacle handling.
-
-### Choral_Chambers
-    - Song_01__bot1: collider obstacle.
-    - Song_01c__left1: collider obstacle.
-    - Song_01c: map/titled area should be Grand Gate.
-    - Song_01c__top1: collider obstacle.
-    - Song_03__top1: collider obstacle.
-    - Song_04__bot1: gate animation doesn't trigger on entering scene.
-    - Song_05__right4: collider obstacle.
-    - Song_10__right1: collider obstacle (entire spa room revealed from breaking wall to the left). Also the lever gate at the transition itself.
-    - Song_11__left4: collider obstacle.
-    - Song_11__right2: collider obstacle.
-    - Song_19_entrance: map/titled area should be Grand Gate.
-    - Song_19_entrance__left1: collider obstacle.
-    - Song_19_entrance__right1: collider obstacle.
-    - Song_20__right_cutsceneEntry: functionally the same as right6, but with a short cutscene.
-    - Song_25__top1: collider obstacle.
-    - Song_25__top2: In Act 3 the sequence of Hornet being weak happens if not previously triggered.
-    - Song_27__left1: collider obstacle.
-    - Song_Enclave__bot1: collider obstacle.
-    - Song_Enclave__door1: In Act 3, arrives by left2 instead. 
-    - Song_Tower_01__right1: collider obstacle. Lace fight immediately starts.
-    - Song_Tower_Destroyed: map/titled area should be The Cradle.
-    - Song_Tower_Destroyed__bot1: breaking animation of object plays, but ideally the object should not be there at all on entry.
 
 ## Resolved Notes
 
@@ -437,6 +415,29 @@ The following areas have not been handled at all:
     - Slab_21__left1: collider obstacle.
     - Slab_23__right1: collider obstacle.
     - Slab_Cell_Quiet__left1: when flipped, it should be Slab_23__door2, not Slab_04__door1.
+
+### Choral_Chambers
+    - Song_01__bot1: collider obstacle.
+    - Song_01c__left1: collider obstacle.
+    - Song_01c: map/titled area should be Grand Gate.
+    - Song_01c__top1: collider obstacle.
+    - Song_03__top1: collider obstacle.
+    - Song_04__bot1: collider obstacle.
+    - Song_05__right4: collider obstacle.
+    - Song_10__right1: collider obstacle (entire spa room revealed from breaking wall to the left). Also the lever gate at the transition itself.
+    - Song_11__left4: collider obstacle.
+    - Song_11__right2: collider obstacle.
+    - Song_19_entrance: map/titled area should be Grand Gate.
+    - Song_19_entrance__left1: collider obstacle.
+    - Song_19_entrance__right1: collider obstacle.
+    - Song_20__right_cutsceneEntry: functionally the same as right6, but with a short cutscene.
+    - Song_25__top1: collider obstacle.
+    - Song_25__top2: In Act 3 the sequence of Hornet being weak happens if not previously triggered.
+    - Song_27__left1: collider obstacle.
+    - Song_Enclave__bot1: collider obstacle.
+    - Song_Tower_01__right1: collider obstacle. Lace fight immediately starts.
+    - Song_Tower_Destroyed: map/titled area should be The Cradle.
+    - Song_Tower_Destroyed__bot1: breaking animation of object plays, but ideally the object should not be there at all on entry.
 
 ### Whispering_Vaults
     - Library_01__left3: collider obstacle.

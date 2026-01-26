@@ -2354,7 +2354,12 @@ public static class BaseGateList
     public static DoorData Slab_Cell_Creature__left1 { get; } = new(new(Slab_Cell_Creature, left1), new(Slab_23, door1));
     public static DoorData Slab_Cell_Quiet__left1 { get; } = new(new(Slab_Cell_Quiet, left1), new(Slab_23, door2));
     public static DoorData Slab_Cell_Quiet__left2 { get; } = new(new(Slab_Cell_Quiet, left2), new(Slab_08, door1));
-    public static DoorData Song_01__bot1 { get; } = new(new(Song_01, bot1), new(Song_01c, top1));
+    public static DoorData Song_01__bot1 { get; } = new(new(Song_01, bot1), new(Song_01c, top1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Floor_basic Song_01", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsExitAccess, new PersistentBoolSaveInfo())
+        ])
+    };
     public static DoorData Song_01__right2 { get; } = new(new(Song_01, right2), new(Under_07b, left1));
     public static DoorData Song_01__top1 { get; } = new(new(Song_01, top1), new(Song_01b, bot1));
     public static DoorData Song_01b__bot1 { get; } = new(new(Song_01b, bot1), new(Song_01, top1));
@@ -2366,13 +2371,34 @@ public static class BaseGateList
     };
     public static DoorData Song_01b__right1 { get; } = new(new(Song_01b, right1), new(Song_02, left2));
     public static DoorData Song_01b__top1 { get; } = new(new(Song_01b, top1), new(Song_03, bot1));
-    public static DoorData Song_01c__left1 { get; } = new(new(Song_01c, left1), new(Song_19_entrance, right1));
-    public static DoorData Song_01c__top1 { get; } = new(new(Song_01c, top1), new(Song_01, bot1));
+    public static DoorData Song_01c__left1 { get; } = new(new(Song_01c, left1), new(Song_19_entrance, right1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsExitAccess, new PersistentBoolSaveInfo(SceneName: Song_19_entrance, ID: "Breakable Wall Entrance Secret"))
+        ])
+    };
+    public static DoorData Song_01c__top1 { get; } = new(new(Song_01c, top1), new(Song_01, bot1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("One Way Wall", ObstacleType.OneWayBreakableExit, ObstacleSeverity.InterruptsEntry, new PersistentBoolSaveInfo(SceneName: Song_01, ID: "Breakable Floor_basic Song_01"))
+        ])
+    };
     public static DoorData Song_02__left2 { get; } = new(new(Song_02, left2), new(Song_01b, right1));
     public static DoorData Song_02__right1 { get; } = new(new(Song_02, right1), new(Song_05, left5));
     public static DoorData Song_03__bot1 { get; } = new(new(Song_03, bot1), new(Song_01b, top1));
-    public static DoorData Song_03__top1 { get; } = new(new(Song_03, top1), new(Song_04, bot1));
-    public static DoorData Song_04__bot1 { get; } = new(new(Song_04, bot1), new(Song_03, top1));
+    public static DoorData Song_03__top1 { get; } = new(new(Song_03, top1), new(Song_04, bot1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("bot_blocker/before", ObstacleType.OneWayMechanismExit, ObstacleSeverity.InterruptsEntry, new PersistentBoolSaveInfo(SceneName: Song_04, ID: "Bot Blocker")),
+            new GameObjectActiveObstacleInfo("bot_blocker/after", true, ObstacleType.Other, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
+    public static DoorData Song_04__bot1 { get; } = new(new(Song_04, bot1), new(Song_03, top1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Bot Blocker", ObstacleType.OneWayMechanismEntry, ObstacleSeverity.LimitsExitAccess, new PersistentBoolSaveInfo()),
+        ])
+    };
     public static DoorData Song_04__left1 { get; } = new(new(Song_04, left1), new(Slab_01, right1));
     public static DoorData Song_04__right1 { get; } = new(new(Song_04, right1), new(Song_12, left1));
     public static DoorData Song_04__right2 { get; } = new(new(Song_04, right2), new(Song_10, left1));
@@ -2381,7 +2407,12 @@ public static class BaseGateList
     public static DoorData Song_05__left5 { get; } = new(new(Song_05, left5), new(Song_02, right1));
     public static DoorData Song_05__right2 { get; } = new(new(Song_05, right2), new(Song_18, left1));
     public static DoorData Song_05__right3 { get; } = new(new(Song_05, right3), new(Ward_01, left1));
-    public static DoorData Song_05__right4 { get; } = new(new(Song_05, right4), new(Song_27, left1));
+    public static DoorData Song_05__right4 { get; } = new(new(Song_05, right4), new(Song_27, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Shortcut Wall", ObstacleType.OneWayMechanismExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.song_27_opened))),
+        ])
+    };
     public static DoorData Song_07__right1 { get; } = new(new(Song_07, right1), new(Song_05, left4));
     public static DoorData Song_08__right1 { get; } = new(new(Song_08, right1), new(Song_12, left3));
     public static DoorData Song_09__bot1 { get; } = new(new(Song_09, bot1), new(Song_09b, top1));
@@ -2390,13 +2421,30 @@ public static class BaseGateList
     public static DoorData Song_09b__left1 { get; } = new(new(Song_09b, left1), new(Song_11, right1));
     public static DoorData Song_09b__top1 { get; } = new(new(Song_09b, top1), new(Song_09, bot1));
     public static DoorData Song_10__left1 { get; } = new(new(Song_10, left1), new(Song_04, right2));
-    public static DoorData Song_10__right1 { get; } = new(new(Song_10, right1), new(Song_11, left4));
+    public static DoorData Song_10__right1 { get; } = new(new(Song_10, right1), new(Song_11, left4))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Pipe_Vent_Hatch_Gate", ObstacleType.OneWayMechanismEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.openedCitadelSpaRight))),
+            new ObstacleInfo("Breakable Wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess, new PersistentBoolSaveInfo()),
+            new UnmaskerInfo("Masks")
+        ])
+    };
     public static DoorData Song_11__left1 { get; } = new(new(Song_11, left1), new(Song_17, right1));
     public static DoorData Song_11__left2 { get; } = new(new(Song_11, left2), new(Song_15, right1));
     public static DoorData Song_11__left3 { get; } = new(new(Song_11, left3), new(Song_13, right1));
-    public static DoorData Song_11__left4 { get; } = new(new(Song_11, left4), new(Song_10, right1));
+    public static DoorData Song_11__left4 { get; } = new(new(Song_11, left4), new(Song_10, right1))
+    {
+        Obstacles = new([
+            new TestObjObstacleInfo("Song_10_hidden_gate", true, ObstacleType.OneWayMechanismExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.openedCitadelSpaRight)))
+        ])
+    };
     public static DoorData Song_11__right1 { get; } = new(new(Song_11, right1), new(Song_09b, left1));
-    public static DoorData Song_11__right2 { get; } = new(new(Song_11, right2), new(Hang_07, left1));
+    public static DoorData Song_11__right2 { get; } = new(new(Song_11, right2), new(Hang_07, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Plug_Gate", ObstacleType.OneWayMechanismEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo())
+        ])
+    };
     public static DoorData Song_11__right3 { get; } = new(new(Song_11, right3), new(Song_05, left3));
     public static DoorData Song_12__left1 { get; } = new(new(Song_12, left1), new(Song_04, right1));
     public static DoorData Song_12__left2 { get; } = new(new(Song_12, left2), new(Song_26, right1));
@@ -2414,8 +2462,18 @@ public static class BaseGateList
     public static DoorData Song_17__right1 { get; } = new(new(Song_17, right1), new(Song_11, left1));
     public static DoorData Song_18__bot1 { get; } = new(new(Song_18, bot1), new(Song_27, top1));
     public static DoorData Song_18__left1 { get; } = new(new(Song_18, left1), new(Song_05, right2));
-    public static DoorData Song_19_entrance__left1 { get; } = new(new(Song_19_entrance, left1), new(Coral_10, right1));
-    public static DoorData Song_19_entrance__right1 { get; } = new(new(Song_19_entrance, right1), new(Song_01c, left1));
+    public static DoorData Song_19_entrance__left1 { get; } = new(new(Song_19_entrance, left1), new(Coral_10, right1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Entrance gate small", ObstacleType.OneWayMechanismExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo(SceneName: Coral_10, ID: "Coral10rightsidegate"))
+        ])
+    };
+    public static DoorData Song_19_entrance__right1 { get; } = new(new(Song_19_entrance, right1), new(Song_01c, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall Entrance Secret", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess, new PersistentBoolSaveInfo())
+        ])
+    };
     public static DoorData Song_19_entrance__right2 { get; } = new(new(Song_19_entrance, right2), new(Under_01, left1));
     public static DoorData Song_20__left1 { get; } = new(new(Song_20, left1), new(Song_27, right1));
     public static DoorData Song_20__left2 { get; } = new(new(Song_20, left2), new(Song_24, right1));
@@ -2434,15 +2492,37 @@ public static class BaseGateList
     public static DoorData Song_25__bot1 { get; } = new(new(Song_25, bot1), new(Song_20b, top1));
     public static DoorData Song_25__left1 { get; } = new(new(Song_25, left1), new(Cog_Dancers, right1));
     public static DoorData Song_25__right1 { get; } = new(new(Song_25, right1), new(Song_Enclave, left1));
-    public static DoorData Song_25__top1 { get; } = new(new(Song_25, top1), new(Arborium_01, bot1));
-    public static DoorData Song_25__top2 { get; } = new(new(Song_25, top2), new(Cog_10_Destroyed, bot1));
+    public static DoorData Song_25__top1 { get; } = new(new(Song_25, top1), new(Arborium_01, bot1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("GameObject (6)/Moss Vine Cluster", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.InterruptsEntry, new PersistentBoolSaveInfo())
+        ])
+    };
+    public static DoorData Song_25__top2 { get; } = new(new(Song_25, top2), new(Cog_10_Destroyed, bot1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Black Thread States/Black Thread World/Weakness Scene Act3 Final", ObstacleType.Cutscene, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
     public static DoorData Song_26__right1 { get; } = new(new(Song_26, right1), new(Song_12, left2));
-    public static DoorData Song_27__left1 { get; } = new(new(Song_27, left1), new(Song_05, right4));
+    public static DoorData Song_27__left1 { get; } = new(new(Song_27, left1), new(Song_05, right4))
+    {
+        // May also have some strange dependency on a quest
+        Obstacles = new([
+            new ObstacleInfo("Citadel Switch Gate", ObstacleType.OneWayMechanismEntry, ObstacleSeverity.LimitsRoomAccess, new PersistentBoolSaveInfo(ID: "Song_lever_side"))
+        ])
+    };
     public static DoorData Song_27__right1 { get; } = new(new(Song_27, right1), new(Song_20, left1));
     public static DoorData Song_27__top1 { get; } = new(new(Song_27, top1), new(Song_18, bot1));
     public static DoorData Song_28__right1 { get; } = new(new(Song_28, right1), new(Song_12, left4));
     public static DoorData Song_29__right1 { get; } = new(new(Song_29, right1), new(Song_20b, left2));
-    public static DoorData Song_Enclave__bot1 { get; } = new(new(Song_Enclave, bot1), new(Library_04, top1));
+    public static DoorData Song_Enclave__bot1 { get; } = new(new(Song_Enclave, bot1), new(Library_04, top1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Library_shortcut/before", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsExitAccess, new PersistentBoolSaveInfo(SceneName: Library_04, ID: "Top Shortcut")),
+            new GameObjectActiveObstacleInfo("Library_shortcut/after", true, ObstacleType.Other, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
     public static DoorData Song_Enclave__door_act3_wakeUp { get; } = new(new(Song_Enclave, door_act3_wakeUp));
     public static DoorData Song_Enclave__door1 { get; } = new(new(Song_Enclave, door1), new(Bellshrine_Enclave, left1));
     public static DoorData Song_Enclave__left1 { get; } = new(new(Song_Enclave, left1), new(Song_25, right1));
@@ -2457,8 +2537,18 @@ public static class BaseGateList
     };
     public static DoorData Song_Tower_01__door_cinematicEnd { get; } = new(new(Song_Tower_01, door_cinematicEnd));
     public static DoorData Song_Tower_01__door_cutsceneEndLaceTower { get; } = new(new(Song_Tower_01, door_cutsceneEndLaceTower));
-    public static DoorData Song_Tower_01__right1 { get; } = new(new(Song_Tower_01, right1), new(Tube_Hub, left1));
-    public static DoorData Song_Tower_Destroyed__bot1 { get; } = new(new(Song_Tower_Destroyed, bot1), new(Cog_09_Destroyed, top1));
+    public static DoorData Song_Tower_01__right1 { get; } = new(new(Song_Tower_01, right1), new(Tube_Hub, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("State Control/song_tower_right_gate", ObstacleType.OpenAfterProgression, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility)
+        ])
+    };
+    public static DoorData Song_Tower_Destroyed__bot1 { get; } = new(new(Song_Tower_Destroyed, bot1), new(Cog_09_Destroyed, top1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Collapser Small", ObstacleType.Other, ObstacleSeverity.AbnormalVisual, new PersistentBoolSaveInfo())
+        ])
+    };
     public static DoorData Song_Tower_Destroyed__top1 { get; } = new(new(Song_Tower_Destroyed, top1), new(Cradle_01_Destroyed, bot1));
     public static DoorData Sprintmaster_Cave__left1 { get; } = new(new(Sprintmaster_Cave, left1), new(Bone_East_18b, door1));
     public static DoorData Tube_Hub__door_tubeEnter { get; } = new(new(Tube_Hub, door_tubeEnter))

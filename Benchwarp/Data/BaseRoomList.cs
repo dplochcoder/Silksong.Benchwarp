@@ -5694,8 +5694,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Song_01c,
         MapZone = MapZone.CITY_OF_SONG,
-        MapArea = MapAreaNames.Choral_Chambers,
-        TitledArea = TitledAreaNames.Choral_Chambers,
+        MapArea = MapAreaNames.Grand_Gate,
+        TitledArea = TitledAreaNames.Grand_Gate,
         Gates = new([
             Song_01c__left1,
             Song_01c__top1,
@@ -5912,8 +5912,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Song_19_entrance,
         MapZone = MapZone.CITY_OF_SONG,
-        MapArea = MapAreaNames.Choral_Chambers,
-        TitledArea = TitledAreaNames.Choral_Chambers,
+        MapArea = MapAreaNames.Grand_Gate,
+        TitledArea = TitledAreaNames.Grand_Gate,
         Gates = new([
             Song_19_entrance__left1,
             Song_19_entrance__right1,
@@ -6071,8 +6071,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Song_Tower_Destroyed,
         MapZone = MapZone.CRADLE,
-        MapArea = MapAreaNames.Choral_Chambers,
-        TitledArea = TitledAreaNames.Choral_Chambers,
+        MapArea = MapAreaNames.Cradle,
+        TitledArea = TitledAreaNames.Cradle,
         Gates = new([
             Song_Tower_Destroyed__bot1,
             Song_Tower_Destroyed__top1,
