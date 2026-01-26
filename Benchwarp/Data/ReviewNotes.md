@@ -100,9 +100,7 @@ The following gates involve a lot of complex objects (FSMs etc.) and have largel
 The following areas have not been handled at all:
 
 ### The_Slab
-    - Slab_10c__door1: collider obstacle (door locked by numerous chains).
-    - Slab_16__door1: arrives at bot1 instead. Existence of door1 seems to depend on Broodmother quest (should be checked).
-    - Slab_23__right1: collider obstacle. Gate is shut and the arena starts.
+    - Slab_16__door1: Still needs permanent (quest-based) obstacle handling.
 
 ### Choral_Chambers
     - Song_01__bot1: collider obstacle.
@@ -432,9 +430,12 @@ The following areas have not been handled at all:
     - Slab_04__door1: arrives at right1 instead. The transition gate doesn't seem to exist.
     - Slab_05__right1: collider obstacle.
     - Slab_06__door1: arrives at top1 instead. The transition gate doesn't seem to exist.
+    - Slab_10c__door1: collider obstacle (door locked by numerous chains).
     - Slab_15__top1: visual obstacle (secret area behind breakable wall on right side of room).
+    - Slab_16__door1: arrives at bot1 instead.
     - Slab_18__left1: collider obstacle.
     - Slab_21__left1: collider obstacle.
+    - Slab_23__right1: collider obstacle.
     - Slab_Cell_Quiet__left1: when flipped, it should be Slab_23__door2, not Slab_04__door1.
 
 ### Whispering_Vaults
