@@ -15,7 +15,7 @@ internal static class SpriteManager
         }
 
         byte[] data = new byte[stream.Length];
-        stream.Read(data, 0, data.Length);
+        _ = stream.Read(data, 0, data.Length);
 
         Texture2D tex = new(2, 2, TextureFormat.RG32, false);
         tex.LoadImage(data);
