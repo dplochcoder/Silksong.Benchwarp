@@ -68,18 +68,6 @@
     <PackageReference Include="Silksong.PrepatcherPlugin" Version="1.3.0" />
     <PackageReference Include="Silksong.DataManager" Version="1.1.0" />
   </ItemGroup>
-  
-  <ItemGroup>
-    <Reference Include="ConfigurationManager">
-      <HintPath>$(SilksongFolder)\BepInEx\plugins\Yukikaco-BepinExConfigurationManager\ConfigurationManager.dll</HintPath>
-    </Reference>
-    <Reference Include="MMHOOK_Assembly-CSharp">
-      <HintPath>$(SilksongFolder)\BepInEx\plugins\MMHOOK\Managed\MMHOOK_Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="MMHOOK_TeamCherry.Localization">
-      <HintPath>$(SilksongFolder)\BepInEx\plugins\MMHOOK\Managed\MMHOOK_TeamCherry.Localization.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 
   <Target Name="CopyAndPackageMod" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Release'">
     <ItemGroup>

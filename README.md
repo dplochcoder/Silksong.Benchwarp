@@ -1,11 +1,25 @@
 # Silksong.Benchwarp
 
-Work-in-progress port of Hollow Knight's [Benchwarp mod](https://github.com/homothetyhk/HollowKnight.BenchwarpMod) to Hollow Knight: Silksong.
+This mod ports Hollow Knight's [Benchwarp mod](https://github.com/homothetyhk/HollowKnight.BenchwarpMod) to Hollow Knight: Silksong. Among its features, Benchwarp allows:
+- Using the menu to set respawn to any bench.
+- Using the menu to warp to the current respawn point.
+- Using the menu to warp to a transition.
+
+Benchwarp has various modes which can be selected in the config, or from the mod menu:
+- StandardBenchwarp: Only warp to visited benches.
+- WarpOnly: Only warp to the current respawn.
+- UnlockAll: Warp to any bench.
+- Doorwarp: Warp to any door transition.
+
+In the menu, bench status is displayed as follows:
+- Yellow: current respawn.
+- White: previously visited.
+- Red: unvisited.
+- Purple: locked (only used in integrations with other mods).
 
 ## Dependencies
 
-- AutoHookGenPatcher, available on Thunderstore.
-- ConfigurationManager, available on Thunderstore.
+- Core Silksong modding libraries: DataManager, I18N, ModMenu.
 
 ## Features
 ### Hotkeys
@@ -21,7 +35,10 @@ Tip: by default, some letters such as **A** are bound to actions that can cancel
 
 ## Credits
 
-- Special thanks: GamingInfinite (VoidBaroness) for bench research and UI design!
+- Huge special thanks to **Phenomenol** for leading the effort to clean transition data and handle obstacles for Doorwarp mode.
+- Thanks to Flibber, Nerthul, and Annalythic for contributions to the transition data cleaning effort and to Posneg for contributions to obstacle handling.
+- Special thanks to GamingInfinite (VoidBaroness) for bench research and UI design!
+
 
 ## License
 

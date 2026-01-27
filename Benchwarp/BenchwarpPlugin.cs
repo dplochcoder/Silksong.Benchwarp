@@ -35,7 +35,6 @@ public partial class BenchwarpPlugin : BaseUnityPlugin
         {
             HarmonyLib.Harmony harmony = new(HarmonyID);
             harmony.PatchAll(GetType().Assembly);
-            Patches.OverrideKnownRespawns.Hook();
             Components.GUIController.Setup();
         }
         catch (Exception e)
@@ -64,7 +63,6 @@ public partial class BenchwarpPlugin : BaseUnityPlugin
         try
         {
             HarmonyLib.Harmony.UnpatchID(HarmonyID);
-            Patches.OverrideKnownRespawns.Unhook();
             Components.GUIController.Unload();
         }
         catch (Exception e)

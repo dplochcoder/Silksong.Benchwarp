@@ -1,27 +1,20 @@
 ﻿using Benchwarp.Benches;
+using HarmonyLib;
 
 namespace Benchwarp.Patches
 {
-    internal static class OverrideKnownRespawns
+    [HarmonyPatch(typeof(GameManager), nameof(GameManager.GetRespawnInfo))]
+    internal static class OverrideKnownRespawnPatch
     {
-        internal static void Hook()
-        {
-            On.GameManager.GetRespawnInfo += OverrideGetRespawnInfo;
-        }
-
-        internal static void Unhook()
-        {
-            On.GameManager.GetRespawnInfo -= OverrideGetRespawnInfo;
-        }
-
-        private static void OverrideGetRespawnInfo(On.GameManager.orig_GetRespawnInfo orig, GameManager self, out string scene, out string marker)
+        [HarmonyPrefix]
+        private static bool OverrideGetRespawnInfo(ref string scene, ref string marker)
         {
             if (BenchList.CurrentBenchRespawn is BenchData bd)
             {
                 RespawnInfo benchRespawn = bd.RespawnInfo.GetRespawnInfo();
                 scene = benchRespawn.SceneName;
                 marker = benchRespawn.RespawnMarkerName;
-                return;
+                return false;
             }
 
             RespawnInfo startRespawn = Events.BenchListModifiers.GetStartDef();
@@ -29,14 +22,18 @@ namespace Benchwarp.Patches
             {
                 scene = startRespawn.SceneName;
                 marker = startRespawn.RespawnMarkerName;
-                return;
+                return false;
             }
+            return true;
+        }
 
-            orig(self, out scene, out marker);
-            if (scene == "Tut_01" && self.playerData.respawnScene != "Tut_01")
+        [HarmonyPostfix]
+        private static void RecordGetRespawnInfoFallthrough(GameManager __instance, ref string scene, ref string marker)
+        {
+            if (scene == "Tut_01" && __instance.playerData.respawnScene != "Tut_01")
             {
                 BenchwarpPlugin.Instance.Logger.LogWarning($"Unrecognized respawn at " +
-                    $"{self.playerData.respawnMarkerName} in {self.playerData.respawnScene}, " +
+                    $"{__instance.playerData.respawnMarkerName} in {__instance.playerData.respawnScene}, " +
                     $"GameManager.GetRespawnInfo will fall through to Tut_01.");
             }
         }
