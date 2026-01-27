@@ -7,6 +7,8 @@ public class SharedSettings(SharedSettingsData data)
     internal string GetHotkey(string code) => data.HotkeyOverrides.TryGetValue(code, out string? altcode) ? altcode : code;
 
     internal static event Action? OnNewSettingsLoaded;
+
+    internal SharedSettingsData GetSerializationData() => data;
     internal void Load(SharedSettingsData data)
     {
         this.data = data;

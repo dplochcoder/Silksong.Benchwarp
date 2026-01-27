@@ -73,7 +73,7 @@ public class SaveSettings(SaveSettingsData data)
         }
     }
 
-    internal void Save(int profileID) => IO.SaveSaveSettingsData(data, profileID);
+    internal SaveSettingsData GetSerializationData() => data;
     internal void Load(SaveSettingsData data)
     {
         this.data = data;

@@ -23,7 +23,7 @@ public class GUIController : MonoBehaviour
 
     public GameObject warpButton = null!;
     public GameObject setStartButton = null!;
-    public GameObject cfgmgrBtn = null!;
+    public GameObject cfgmenuBtn = null!;
     public GameObject nextPageBtn = null!;
     public List<GameObject> dropdowns = new([]);
     public GameObject sceneNamePanel = null!;
@@ -38,7 +38,7 @@ public class GUIController : MonoBehaviour
 
     public int page = 1;
     public static int maxPages = 2;
-    public static int maxDropdowns = 12;
+    public static int maxDropdowns = 11;
 
     // see ResetBuildParameters()
     public static int btnWidth; //Controls Button Size Universally
@@ -159,7 +159,7 @@ public class GUIController : MonoBehaviour
             {
                 if (GameManager.UnsafeInstance != null)
                 {
-                    string sceneText = TextModifiers.GetSceneName(GameManager.instance.sceneName);
+                    string sceneText = GameManager.instance.sceneName;
                     if (HeroController.SilentInstance != null)
                     {
                         Vector2 heroPos = HeroController.instance.transform.position;
@@ -226,7 +226,7 @@ public class GUIController : MonoBehaviour
     {
         btnWidth = 125; //Controls Button Size Universally
         btnHeight = 45; //Controls Button Size Universally
-        btnOffsetX = 10; //Initial X Offset
+        btnOffsetX = 125; //Initial X Offset
         baseDropdownRowXOffset = btnOffsetX + btnWidth + 20; //For Reset on Row Drop
         btnOffsetY = 10; //Y Offset for Dropdowns
         baseDropdownYOffset = btnOffsetY; //Y Offset for Bench Buttons
@@ -255,21 +255,20 @@ public class GUIController : MonoBehaviour
 
         ResetBuildParameters();
 
-        warpButton = BuildButton(benchMenuCanvas, "Warp", btnOffsetX, -btnOffsetY, TopLeftCorner, true, BenchwarpPlugin.SharedSettings.GetHotkey("LB")); //Warp Button
+        warpButton = BuildButton(benchMenuCanvas, "Warp", "BUTTON_LABEL(Warp)", btnOffsetX, -btnOffsetY, TopLeftCorner, true, BenchwarpPlugin.SharedSettings.GetHotkey("LB")); //Warp Button
         warpButton.GetComponent<Button>().onClick.AddListener(ChangeScene.WarpToRespawn);
 
-        setStartButton = BuildButton(benchMenuCanvas, "Set Start", btnOffsetX, -btnOffsetY * 2 - btnHeight, TopLeftCorner, true, BenchwarpPlugin.SharedSettings.GetHotkey("SB")); //Set Start
+        setStartButton = BuildButton(benchMenuCanvas, "Set Start", "BUTTON_LABEL(Set Start)", btnOffsetX, -btnOffsetY * 2 - btnHeight, TopLeftCorner, true, BenchwarpPlugin.SharedSettings.GetHotkey("SB")); //Set Start
         setStartButton.GetComponent<Button>().onClick.AddListener(BenchListModifiers.MenuSetToStart);
         setStartButton.AddComponent<AtStartListener>().buttonText = setStartButton.transform.Find("ButtonText").GetComponent<Text>();
 
         btnOffsetX += btnWidth + 20;
 
 
-        cfgmgrBtn = BuildButton(benchMenuCanvas, "Config", -10, -10, new Vector2(1, 1));
+        cfgmenuBtn = BuildButton(benchMenuCanvas, "Config", "BUTTON_LABEL(Config)", -10, -10, new Vector2(1, 1));
         try
         {
-            var cfgmgr = FindAnyObjectByType<ConfigurationManager.ConfigurationManager>();
-            cfgmgrBtn.GetComponent<Button>().onClick.AddListener(() => cfgmgr.DisplayingWindow ^= true);
+            cfgmenuBtn.GetComponent<Button>().onClick.AddListener(() => BenchwarpPlugin.Instance.ModMenuEntryButton?.OnSubmit?.Invoke());
         }
         catch (Exception e)
         {
@@ -277,7 +276,7 @@ public class GUIController : MonoBehaviour
         }
 
 
-        nextPageBtn = BuildButton(benchMenuCanvas, "Page ", -10, -(20 + btnHeight), new Vector2(1, 1), true, BenchwarpPlugin.SharedSettings.GetHotkey("NP"));
+        nextPageBtn = BuildButton(benchMenuCanvas, "Page ", "BUTTON_LABEL(Page)", -10, -(20 + btnHeight), new Vector2(1, 1), true, BenchwarpPlugin.SharedSettings.GetHotkey("NP"));
         nextPageBtn.GetComponent<Button>().onClick.AddListener(NextPage);
 
 
@@ -293,7 +292,7 @@ public class GUIController : MonoBehaviour
                 pageToSet++;
             }
 
-            GameObject dropdownObj = BuildButton(benchMenuCanvas, menuArea, btnOffsetX, -btnOffsetY, TopLeftCorner, hotkey: ((char)('A' + i - 1)).ToString());
+            GameObject dropdownObj = BuildButton(benchMenuCanvas, menuArea, $"BENCH_AREA_LABEL({menuArea})", btnOffsetX, -btnOffsetY, TopLeftCorner, hotkey: ((char)('A' + i - 1)).ToString());
             BenchDropdown dropdown = dropdownObj.AddComponent<BenchDropdown>();
             dropdown.page = pageToSet;
             dropdown.Init(dropdownObj, menuArea, benches);
@@ -311,38 +310,37 @@ public class GUIController : MonoBehaviour
 
         ResetBuildParameters();
 
-        doorWarpButton = BuildButton(doorMenuCanvas, "Warp", btnOffsetX, -btnOffsetY, TopLeftCorner, true); // Warp Button
+        doorWarpButton = BuildButton(doorMenuCanvas, "Warp", "BUTTON_LABEL(Warp)", btnOffsetX, -btnOffsetY, TopLeftCorner, true); // Warp Button
         doorWarpButton.GetComponent<Button>().onClick.AddListener(doorSelector.Warp);
 
-        doorFlipButton = BuildButton(doorMenuCanvas, "Flip", btnOffsetX, -btnOffsetY * 2 - btnHeight, TopLeftCorner, true); // Flip Button
+        doorFlipButton = BuildButton(doorMenuCanvas, "Flip", "BUTTON_LABEL(Flip)", btnOffsetX, -btnOffsetY * 2 - btnHeight, TopLeftCorner, true); // Flip Button
         doorFlipButton.GetComponent<Button>().onClick.AddListener(doorSelector.Flip);
 
-        doorSelectPrevButton = BuildButton(doorMenuCanvas, "Last Entered", btnOffsetX, -btnOffsetY * 3 - btnHeight * 2, TopLeftCorner, true); // Prev Door Button
+        doorSelectPrevButton = BuildButton(doorMenuCanvas, "Last Entered", "BUTTON_LABEL(Last Entered)", btnOffsetX, -btnOffsetY * 3 - btnHeight * 2, TopLeftCorner, true); // Prev Door Button
         doorSelectPrevButton.GetComponent<Button>().onClick.AddListener(doorSelector.LastEntered);
 
-        cfgmgrBtn = BuildButton(doorMenuCanvas, "Config", -10, -10, new Vector2(1, 1));
+        doorConfigButton = BuildButton(doorMenuCanvas, "Config", "BUTTON_LABEL(Config)", -10, -10, new Vector2(1, 1));
         try
         {
-            var cfgmgr = FindAnyObjectByType<ConfigurationManager.ConfigurationManager>();
-            cfgmgrBtn.GetComponent<Button>().onClick.AddListener(() => cfgmgr.DisplayingWindow ^= true);
+            doorConfigButton.GetComponent<Button>().onClick.AddListener(() => BenchwarpPlugin.Instance.ModMenuEntryButton?.OnSubmit?.Invoke());
         }
         catch (Exception e)
         {
             LogError(e);
         }
 
-        GameObject areaDropdown = BuildButton(doorMenuCanvas, "Areas", 11 * (btnOffsetX + btnWidth), -btnOffsetY, TopLeftCorner);
+        GameObject areaDropdown = BuildButton(doorMenuCanvas, "Areas", "BUTTON_LABEL(Areas)", btnOffsetX + (int)(11.25f * btnWidth), -btnOffsetY, TopLeftCorner);
         DropdownRadioSwitch areaSwitch = areaDropdown.AddComponent<DropdownRadioSwitch>();
-        areaSwitch.Init(areaDropdown, "Areas", 6, 9);
+        areaSwitch.Init(areaDropdown, "Areas", 5, 10);
         areaSwitch.GetComponent<Button>().onClick.AddListener(areaSwitch.ToggleDropdown);
-        areaSwitch.Populate(DoorList.RoomGroups.Select(g => g.MenuArea), false);
+        areaSwitch.Populate(DoorList.RoomGroups.Select(g => g.MenuArea), autoOpen: false, localizable: true);
 
-        GameObject roomDropdown = BuildButton(doorMenuCanvas, "Rooms", 5 * (btnOffsetX + btnWidth), -btnOffsetY, TopLeftCorner);
+        GameObject roomDropdown = BuildButton(doorMenuCanvas, "Rooms", "BUTTON_LABEL(Rooms)", btnOffsetX + (int)(5.5f * btnWidth), -btnOffsetY, TopLeftCorner);
         DropdownRadioSwitch roomSwitch = roomDropdown.AddComponent<DropdownRadioSwitch>();
-        roomSwitch.Init(roomDropdown, "Rooms", 6, 19);
+        roomSwitch.Init(roomDropdown, "Rooms", 6, 10);
         roomSwitch.GetComponent<Button>().onClick.AddListener(areaSwitch.ToggleDropdown);
         
-        GameObject doorDropdown = BuildButton(doorMenuCanvas, "Doors", 3 * btnWidth / 2, -btnOffsetY, TopLeftCorner);
+        GameObject doorDropdown = BuildButton(doorMenuCanvas, "Doors", "BUTTON_LABEL(Doors)", btnOffsetX + (int)(1.5f * btnWidth), -btnOffsetY, TopLeftCorner);
         DropdownRadioSwitch doorSwitch = doorDropdown.AddComponent<DropdownRadioSwitch>();
         doorSwitch.Init(doorDropdown, "Doors", 2, 10);
         roomSwitch.GetComponent<Button>().onClick.AddListener(areaSwitch.ToggleDropdown);
@@ -371,7 +369,7 @@ public class GUIController : MonoBehaviour
         sceneNamePanel.transform.SetParent(sceneNameCanvas.transform, false);
     }
 
-    public static GameObject BuildButton(GameObject canvas, string name, int x, int y, Vector2 corner, bool bg = true, string hotkey = "")
+    public static GameObject BuildButton(GameObject canvas, string name, string textKey, int x, int y, Vector2 corner, bool bg = true, string hotkey = "")
     {
         GameObject button = new($"{name} Button", [typeof(RectTransform)]);
         button.transform.SetParent(canvas.transform, false);
@@ -410,10 +408,11 @@ public class GUIController : MonoBehaviour
         hotkeyRT.offsetMax = new(0, -5);
 
         Text benchNameText = buttonTxt.AddComponent<Text>();
-        benchNameText.text = name;
+        benchNameText.text = string.Empty;
         FontManager.SetTrajanFont(benchNameText);
         benchNameText.alignment = TextAnchor.MiddleCenter;
         benchNameText.color = Color.white;
+        buttonTxt.AddComponent<AutoLocalizeModdedText>().Key = textKey;
 
         RectTransform textRT = buttonTxt.GetComponent<RectTransform>();
         textRT.anchorMin = new(0.05f, 0);

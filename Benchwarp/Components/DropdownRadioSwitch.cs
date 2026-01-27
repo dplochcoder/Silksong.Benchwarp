@@ -50,7 +50,7 @@ public class DropdownRadioSwitch : MonoBehaviour
             {
                 int index = r * columns + c;
                 string btnName = $"{name} ({index})";
-                GameObject go = GUIController.BuildButton(canvas, btnName, HorizontalOffset(c), VerticalOffset(r), GUIController.TopLeftCorner, bg: false);
+                GameObject go = GUIController.BuildButton(canvas, btnName, "", HorizontalOffset(c), VerticalOffset(r), GUIController.TopLeftCorner, bg: false);
                 Text text = go.transform.Find("ButtonText").GetComponent<Text>();
                 go.GetComponent<Button>().onClick.AddListener(() => Select(index));
                 buttons.Add((go, text));
@@ -91,7 +91,7 @@ public class DropdownRadioSwitch : MonoBehaviour
         HideAll();
     }
 
-    public void Populate(IEnumerable<string> strs, bool autoOpen)
+    public void Populate(IEnumerable<string> strs, bool autoOpen, bool localizable)
     {
         Depopulate();
         int i = 0;
@@ -100,7 +100,17 @@ public class DropdownRadioSwitch : MonoBehaviour
             foreach (string str in strs)
             {
                 options.Add(str);
-                buttons[i++].text.text = str;
+                if (localizable)
+                {
+                    buttons[i].text.GetComponent<AutoLocalizeModdedText>().Key = $"RADIO_SWITCH_LABEL({str})";
+                    i++;
+                }
+                else
+                {
+                    buttons[i].text.text = str;
+                    buttons[i].text.GetComponent<AutoLocalizeModdedText>().Key = "";
+                    i++;
+                }
             }
         }
         catch (Exception e)

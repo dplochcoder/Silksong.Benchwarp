@@ -25,7 +25,7 @@ public class DoorSelectorComponent : MonoBehaviour
     public void OnAreaSelectionChanged(string area)
     {
         Area = groups[area];
-        roomSwitch!.Populate(Area!.Rooms.Select(r => r.Name), autoOpen: true);
+        roomSwitch!.Populate(Area!.Rooms.Select(r => r.Name), autoOpen: true, localizable: false);
     }
 
     public void OnAreaSelectionCanceled()
@@ -38,7 +38,7 @@ public class DoorSelectorComponent : MonoBehaviour
     public void OnRoomSelectionChanged(string room)
     {
         Room = roomsByGroup[Area!.MenuArea][room];
-        doorSwitch!.Populate(Room!.Gates.Select(g => g.Self.GateName), autoOpen: true);
+        doorSwitch!.Populate(Room!.Gates.Select(g => g.Self.GateName), autoOpen: true, localizable: false);
     }
 
     public void OnRoomSelectionCanceled()

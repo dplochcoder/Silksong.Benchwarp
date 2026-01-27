@@ -22,7 +22,7 @@ public class BenchDropdown : MonoBehaviour
         for (int i = 0; i < benches.Count; i++)
         {
             BenchData benchData = benches[i];
-            buttons.Add(GUIController.BuildButton(canvas, benchData.BenchName, 0, -(btnHeight + btnOffsetY + (btnOffsetY + btnHeight) * i), GUIController.TopLeftCorner, false, i.ToString()));
+            buttons.Add(GUIController.BuildButton(canvas, benchData.BenchName, $"BENCH_LABEL({benchData.BenchName})", 0, -(btnHeight + btnOffsetY + (btnOffsetY + btnHeight) * i), GUIController.TopLeftCorner, false, i.ToString()));
             BenchComponent bench = buttons[i].AddComponent<BenchComponent>();
             bench.data = benchData;
             bench.buttonText = buttons[i].transform.Find("ButtonText").GetComponent<Text>();

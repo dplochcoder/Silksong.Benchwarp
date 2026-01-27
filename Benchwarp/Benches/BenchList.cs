@@ -26,7 +26,7 @@ public static class BenchList
         BenchListModifiers.SortBenchList(_benchList);
         _groupList.Clear();
         _groupList.AddRange(_benchList.GroupBy(b => b.MenuArea).Select(g => new AreaBenchGroup { MenuArea = g.Key, Benches = new([.. g]) }));
-        
+
         //TopMenu.RebuildMenu(); // TODO
     }   
 
